@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist</title>
+    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer | AI / GTM Automation Specialist & Business Operations Expert</title>
     <style>
         * {
             margin: 0;
@@ -55,15 +55,6 @@
             z-index: 1;
         }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid #ffffff;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
         h1 {
             font-size: 3em;
             margin-bottom: 10px;
@@ -73,6 +64,12 @@
         .title {
             font-size: 1.3em;
             color: #e0f7f0;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            color: #b8e6d5;
             margin-bottom: 20px;
         }
 
@@ -128,6 +125,15 @@
             margin-bottom: 20px;
         }
 
+        .experience-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+            border-radius: 25px;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -171,6 +177,36 @@
             left: 0;
             color: #00d084;
             font-size: 1.5em;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 60px 0 40px;
+        }
+
+        .section-divider h2 {
+            display: inline-block;
+            position: relative;
+            padding: 0 30px;
+        }
+
+        .section-divider h2::before,
+        .section-divider h2::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(135deg, #00d084 0%, transparent 100%);
+        }
+
+        .section-divider h2::before {
+            right: 100%;
+        }
+
+        .section-divider h2::after {
+            left: 100%;
+            background: linear-gradient(135deg, transparent 0%, #00d084 100%);
         }
 
         .projects-grid {
@@ -261,6 +297,61 @@
             background: rgba(0,208,132,0.2);
         }
 
+        .experience-timeline {
+            position: relative;
+            padding-left: 50px;
+            margin-top: 40px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #00d084 0%, #00a86b 100%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.03);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 3px solid #00d084;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -53px;
+            top: 25px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #00d084;
+            border: 3px solid #1a3a45;
+        }
+
+        .timeline-date {
+            color: #00ffa3;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.3em;
+            color: #00d084;
+            margin-bottom: 10px;
+        }
+
+        .timeline-company {
+            color: #b8e6d5;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
         footer {
             background: rgba(0,0,0,0.3);
             text-align: center;
@@ -288,6 +379,18 @@
 
             .contact-links {
                 flex-direction: column;
+            }
+
+            .experience-timeline {
+                padding-left: 30px;
+            }
+
+            .experience-timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item::before {
+                left: -43px;
             }
         }
 
@@ -324,12 +427,17 @@
     <header>
         <div class="header-content">
             <h1>Adagbonyin Efeosa Funmilayo</h1>
-            <p class="title">Full-Stack Web Developer | AI Automation Specialist | GoHighLevel Architect | GTM Engineer</p>
+            <p class="title">Full-Stack Web Developer | AI Automation Specialist | GoHighLevel Architect</p>
+            <p class="subtitle">Senior Virtual Assistant & Business Operations Expert</p>
+            <div style="margin: 20px 0;">
+                <span class="experience-badge">🚀 3 Years Web Dev & AI</span>
+                <span class="experience-badge">💼 7 Years Virtual Assistant</span>
+                <span class="experience-badge">🌍 10 Years Combined Experience</span>
+            </div>
             <div class="contact-links">
-                <a href="mailto:efejasmine98@gmail.com">📧 Email</a>
+                <a href="mailto:efejasmine98@gmail.com">📧 efejasmine98@gmail.com</a>
                 <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">💼 LinkedIn</a>
                 <a href="tel:+2290192603172">📞 +229 019 2603 172</a>
-                <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" target="_blank">🎬 View All Demos</a>
             </div>
         </div>
     </header>
@@ -338,45 +446,70 @@
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <p>A highly versatile Full-Stack Developer and AI Automation Architect with proven experience building, deploying, and managing complete web ecosystems. I excel at translating business requirements into robust, scalable solutions, from designing intuitive UI/UX and developing responsive frontends with Next.js, to engineering complex backends with Python and Django.</p>
-                <p>With deep expertise in integrating AI (Google Gemini) and building event-driven automation systems (n8n, Celery), I create intelligent, efficient, and user-centric applications. I'm passionate about web development, GTM engineering, and AI automation that transforms how businesses operate.</p>
+                <p>A highly versatile Full-Stack Developer, AI Automation Architect, and Senior Virtual Assistant with 10 years of combined experience building, deploying, and managing complete business ecosystems. I bridge the gap between technical development and business operations—transforming complex requirements into elegant, scalable solutions.</p>
+                <p>With 3 years of intensive web development and AI integration experience, I excel at designing intuitive UI/UX with Next.js, engineering robust backends with Python and Django, and implementing intelligent automation systems using n8n, Celery, and Google Gemini. My 7 years as a Virtual Assistant and Operations Manager give me a unique advantage: I don't just build software—I understand the real-world business processes it needs to serve.</p>
+                <p>I architect solutions that eliminate manual work, increase efficiency, and drive revenue. From building AI-powered customer support systems to managing multi-location CRM workflows, I create technology that actually works for businesses.</p>
                 <p>📍 Based in Bénin | 🌍 Available for remote opportunities worldwide</p>
             </div>
 
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Core Competencies</h3>
+                    <h3>Development & AI</h3>
                     <ul>
-                        <li>Workflow Automation & Optimization</li>
-                        <li>Executive Administrative Support</li>
-                        <li>Advanced Inbox & Calendar Management</li>
-                        <li>CRM & Database Administration</li>
-                        <li>Client Relationship Management</li>
-                        <li>Project & Task Coordination</li>
+                        <li>Frontend: Next.js, React, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</li>
+                        <li>Backend: Python, Django REST Framework, Node.js</li>
+                        <li>AI & LLM: Google Gemini, Prompt Engineering, Celery, REST APIs</li>
+                        <li>Databases: PostgreSQL, Redis, Docker, Vercel</li>
+                        <li>E-commerce: Shopify (Store Setup, Theme Customization, App Integration)</li>
+                        <li>Design: Figma, Canva, Wireframing, Prototyping</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Technical Proficiency</h3>
+                    <h3>Automation & CRM</h3>
                     <ul>
-                        <li>Frontend: Next.js, React, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</li>
-                        <li>AI & LLM: Google Gemini, Prompt Engineering, Celery, REST APIs, Webhooks</li>
-                        <li>Backend: Python, Django REST Framework, Node.js</li>
-                        <li>Databases: PostgreSQL, Redis, Docker, Vercel</li>
-                        <li>CRM & Automation: GoHighLevel, Klaviyo, Zapier, n8n</li>
-                        <li>E-commerce: Shopify, WordPress</li>
-                        <li>Design: Figma, Canva, Wireframing, Prototyping</li>
-                        <li>Marketing: SEO, Meta Ads, Google Analytics</li>
+                        <li>GoHighLevel: Advanced Workflows, Funnels, Sub-account Architecture</li>
+                        <li>Marketing Automation: Klaviyo, Zapier, n8n (Advanced)</li>
+                        <li>Workflow Automation & Optimization</li>
+                        <li>CRM & Database Administration</li>
+                        <li>Email Marketing & Drip Campaigns</li>
+                        <li>API Integrations & Webhooks</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Business Operations</h3>
+                    <ul>
+                        <li>Executive Administrative Support</li>
+                        <li>Advanced Inbox & Calendar Management</li>
+                        <li>Client Relationship Management</li>
+                        <li>Project & Task Coordination</li>
+                        <li>Google My Business Management</li>
+                        <li>SEO, Meta Ads, Google Analytics</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <div class="section-divider">
+        <h2>Web Development & AI Projects</h2>
+    </div>
+
+    <section id="dev-projects">
         <div class="container">
-            <h2>Featured Projects</h2>
             <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Ebonic Embrace - Shopify E-commerce</h3>
+                    <p>Built and launched a complete Shopify e-commerce platform for salon and barber products. Designed custom product pages, implemented payment gateway integration, optimized for mobile responsiveness, and configured inventory management systems.</p>
+                    <p>Managed ongoing site maintenance, product updates, SEO optimization, and customer experience enhancements to drive conversions and sales growth.</p>
+                    <p class="tech-stack">Tech Stack: Shopify, Liquid, HTML/CSS, Payment Gateway Integration, SEO Optimization</p>
+                    <div class="project-links">
+                        <a href="https://ebonicembrace.com/collections/salon-barber/" class="btn" target="_blank">View Live Site</a>
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Demos</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <h3>GoHighLevel Gym Management System</h3>
                     <p>Architected and deployed a complete MVP for a multi-location gym franchise using GoHighLevel. Engineered a sophisticated lead management system featuring round-robin assignment, 1-minute auto-rerouting, and 5-minute lead-locking logic to maximize conversion speed.</p>
@@ -422,17 +555,127 @@
         </div>
     </section>
 
+    <div class="section-divider">
+        <h2>Virtual Assistant & Operations Experience</h2>
+    </div>
+
+    <section id="va-experience">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <a href="https://drive.google.com/drive/folders/1hnxvX2TI2VBUt9dwJ_DltLZ3hlStOoyj" class="btn" target="_blank" style="font-size: 1.2em; padding: 15px 35px;">📁 View All VA Project Demos</a>
+            </div>
+
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - 2025</div>
+                    <div class="timeline-title">Virtual Assistant & Systems Support</div>
+                    <div class="timeline-company">Magic Hollow Moment</div>
+                    <p>Acted as the primary point of contact for all client communication and support, maintaining a 98% positive client satisfaction rate through proactive and professional service.</p>
+                    <p>Engineered a complete business support system that automated email handling and client follow-ups, reducing daily inbox management time by over 75%.</p>
+                    <p>Designed and deployed an AI-powered workflow to intelligently sort incoming emails and generate draft replies for common support queries, ensuring faster, more consistent communication.</p>
+                    <p>Streamlined the client payment process by building an automated workflow for invoicing and transaction tracking, improving cash flow and reducing administrative errors.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-title">Event Coordinator & Client Support Manager</div>
+                    <div class="timeline-company">IJGB Naija</div>
+                    <p>Provided comprehensive administrative support for multiple entrepreneurs, managing complex schedules, CRM updates, and high-volume inboxes to maximize client productivity.</p>
+                    <p>Developed a streamlined client onboarding process, creating branded guides and checklists that reduced new client setup time by 40%.</p>
+                    <p>Proofread and enhanced over 500+ documents, including emails and social media posts, ensuring brand consistency, clarity, and professionalism.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 - 2025 (8 Years)</div>
+                    <div class="timeline-title">Business Manager & Google My Business Specialist</div>
+                    <div class="timeline-company">UK Okrika Bale</div>
+                    <p>Built, launched, and managed complete Google My Business presence for an international retail business, driving local SEO visibility and customer engagement for 8 years.</p>
+                    <p>Provided elite, 24/7 customer support for international clients during high-stakes events, resolving issues immediately to ensure a seamless and positive experience.</p>
+                    <p>Managed all client-facing communication, including drafting professional itineraries, booking confirmations, and follow-up emails, leading to high rates of repeat business.</p>
+                    <p>Maintained meticulous records of all bookings, schedules, and client preferences, ensuring flawless execution of complex logistical arrangements.</p>
+                    <div class="project-links" style="margin-top: 20px;">
+                        <a href="https://maps.app.goo.gl/vES1c9bGVLa8EzPR7" class="btn btn-secondary" target="_blank">View Google My Business Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <h2>Investment & Pricing</h2>
+    </div>
+
+    <section id="pricing">
+        <div class="container">
+            <div class="about-content" style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 1.2em; margin-bottom: 30px;">Professional rates that reflect quality, expertise, and results. All projects include consultation, implementation, and post-launch support.</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" style="text-align: center;">
+                    <h3>💻 Web Development</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$50+</div>
+                    <p style="color: #b8e6d5;">Per Hour</p>
+                    <p style="margin-top: 20px;">Custom websites, web applications, frontend/backend development, API integrations</p>
+                </div>
+
+                <div class="project-card" style="text-align: center;">
+                    <h3>🚀 Full-Stack Projects</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$3,500+</div>
+                    <p style="color: #b8e6d5;">Project-Based</p>
+                    <p style="margin-top: 20px;">Complete web applications with frontend, backend, database, authentication, and deployment</p>
+                </div>
+
+                <div class="project-card" style="text-align: center;">
+                    <h3>🎯 GoHighLevel Setup</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$2,000+</div>
+                    <p style="color: #b8e6d5;">Per Implementation</p>
+                    <p style="margin-top: 20px;">Complete CRM architecture, workflows, automations, sub-account setup, and training</p>
+                </div>
+
+                <div class="project-card" style="text-align: center;">
+                    <h3>📊 GTM Engineering</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$1,500+</div>
+                    <p style="color: #b8e6d5;">Per Strategy</p>
+                    <p style="margin-top: 20px;">Go-to-market strategy, ICP definition, lead sourcing, email sequences, tech stack setup</p>
+                </div>
+
+                <div class="project-card" style="text-align: center;">
+                    <h3>📈 Digital Marketing</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$1,000+</div>
+                    <p style="color: #b8e6d5;">Per Campaign</p>
+                    <p style="margin-top: 20px;">SEO strategy, content marketing, Meta Ads, Google Analytics setup and optimization</p>
+                </div>
+
+                <div class="project-card" style="text-align: center;">
+                    <h3>💼 Virtual Assistant Services</h3>
+                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$25+</div>
+                    <p style="color: #b8e6d5;">Per Hour</p>
+                    <p style="margin-top: 20px;">Administrative support, inbox management, CRM administration, client coordination</p>
+                </div>
+            </div>
+
+            <div class="about-content" style="text-align: center; margin-top: 50px;">
+                <h3 style="color: #00ffa3; margin-bottom: 20px; font-size: 1.8em;">Ready to Work Together?</h3>
+                <p style="font-size: 1.1em; margin-bottom: 30px;">Every project is unique. Let's discuss your specific needs and create a custom solution that delivers real results for your business.</p>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                    <a href="mailto:efejasmine98@gmail.com" class="btn" style="font-size: 1.1em; padding: 15px 35px;">📧 Get a Custom Quote</a>
+                    <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" class="btn btn-secondary" target="_blank" style="font-size: 1.1em; padding: 15px 35px;">💼 Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Adagbonyin Efeosa Funmilayo. All rights reserved.</p>
-            <p>Built with passion for innovation and automation 🚀</p>
+            <p>Built with passion for innovation, automation, and business excellence 🚀</p>
         </div>
     </footer>
 
     <div class="scroll-top" id="scrollTop">↑</div>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -443,7 +686,6 @@
             });
         });
 
-        // Scroll to top button
         const scrollTop = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -457,7 +699,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Add animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -472,7 +713,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card, .skill-category').forEach(el => {
+        document.querySelectorAll('.project-card, .skill-category, .timeline-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
