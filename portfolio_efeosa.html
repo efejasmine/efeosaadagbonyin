@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00d084 0%, #00a86b 50%, #008751 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #ffffff;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            color: #e0f7f0;
+            margin-bottom: 20px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-links a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-links a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, #00d084 0%, #00ffa3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,208,132,0.3);
+            margin-bottom: 40px;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, rgba(0,208,132,0.1) 0%, rgba(0,168,107,0.1) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(0,208,132,0.3);
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: #00d084;
+            box-shadow: 0 10px 30px rgba(0,208,132,0.3);
+        }
+
+        .skill-category h3 {
+            color: #00ffa3;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .skill-category li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #00d084;
+            font-size: 1.5em;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(0,208,132,0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,208,132,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: #00d084;
+            box-shadow: 0 15px 40px rgba(0,208,132,0.3);
+        }
+
+        .project-card h3 {
+            color: #00ffa3;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .project-card p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            color: #00d084;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,208,132,0.4);
+            background: linear-gradient(135deg, #00ffa3 0%, #00d084 100%);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            border: 2px solid #00d084;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0,208,132,0.2);
+        }
+
+        footer {
+            background: rgba(0,0,0,0.3);
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #00ffa3;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s;
+            font-size: 1.5em;
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,208,132,0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Adagbonyin Efeosa Funmilayo</h1>
+            <p class="title">Full-Stack Web Developer | AI Automation Specialist | GoHighLevel Architect | GTM Engineer</p>
+            <div class="contact-links">
+                <a href="mailto:efejasmine98@gmail.com">📧 Email</a>
+                <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">💼 LinkedIn</a>
+                <a href="tel:+2290192603172">📞 +229 019 2603 172</a>
+                <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" target="_blank">🎬 View All Demos</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <p>A highly versatile Full-Stack Developer and AI Automation Architect with proven experience building, deploying, and managing complete web ecosystems. I excel at translating business requirements into robust, scalable solutions, from designing intuitive UI/UX and developing responsive frontends with Next.js, to engineering complex backends with Python and Django.</p>
+                <p>With deep expertise in integrating AI (Google Gemini) and building event-driven automation systems (n8n, Celery), I create intelligent, efficient, and user-centric applications. I'm passionate about web development, GTM engineering, and AI automation that transforms how businesses operate.</p>
+                <p>📍 Based in Bénin | 🌍 Available for remote opportunities worldwide</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Workflow Automation & Optimization</li>
+                        <li>Executive Administrative Support</li>
+                        <li>Advanced Inbox & Calendar Management</li>
+                        <li>CRM & Database Administration</li>
+                        <li>Client Relationship Management</li>
+                        <li>Project & Task Coordination</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Technical Proficiency</h3>
+                    <ul>
+                        <li>Frontend: Next.js, React, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</li>
+                        <li>AI & LLM: Google Gemini, Prompt Engineering, Celery, REST APIs, Webhooks</li>
+                        <li>Backend: Python, Django REST Framework, Node.js</li>
+                        <li>Databases: PostgreSQL, Redis, Docker, Vercel</li>
+                        <li>CRM & Automation: GoHighLevel, Klaviyo, Zapier, n8n</li>
+                        <li>E-commerce: Shopify, WordPress</li>
+                        <li>Design: Figma, Canva, Wireframing, Prototyping</li>
+                        <li>Marketing: SEO, Meta Ads, Google Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>GoHighLevel Gym Management System</h3>
+                    <p>Architected and deployed a complete MVP for a multi-location gym franchise using GoHighLevel. Engineered a sophisticated lead management system featuring round-robin assignment, 1-minute auto-rerouting, and 5-minute lead-locking logic to maximize conversion speed.</p>
+                    <p>Built complex compliance rules for location-based calendars and implemented automated appointment reminder workflows to reduce no-shows. Designed a scalable multi-subaccount architecture (Intake Hub + Franchise Locations).</p>
+                    <p class="tech-stack">Tech Stack: GoHighLevel, API Integrations, Workflow Automation, Aircall</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>IJGBNaija Backend & AI Integration</h3>
+                    <p>Single-handedly architected and deployed a production-ready backend API for a booking platform using Python and Django REST Framework in just four days. Engineered a secure user registration and authentication system using JSON Web Tokens (JWT) and PostgreSQL.</p>
+                    <p>Integrated Celery and Redis for asynchronous task queuing. Currently developing the responsive frontend using Next.js and Tailwind CSS. Built and integrated a conversational AI agent for WhatsApp using n8n and Google Gemini for 24/7 customer support.</p>
+                    <p class="tech-stack">Tech Stack: Python, Django REST Framework, Next.js, PostgreSQL, Redis, Celery, n8n, Google Gemini</p>
+                    <div class="project-links">
+                        <a href="#" class="btn">GitHub (Coming Soon)</a>
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>N8N Gmail AI Automation</h3>
+                    <p>Designed and deployed an end-to-end AI-powered email support system that reduced manual inbox management time by over 75%. Engineered a multi-step workflow in n8n connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
+                    <p>Developed an intelligent agent that drafts context-aware, professional replies for support tickets, cutting response time by over 90% and ensuring service consistency.</p>
+                    <p class="tech-stack">Tech Stack: n8n, Gmail API, Google Gemini, Workflow Automation, AI Integration</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Kontext Group UK - GTM Strategy</h3>
+                    <p>Developed comprehensive Go-To-Market strategy for Hungarian marketing agency expanding to UK market ($150k ARR). Delivered complete ICP definition with reasoning, lead sourcing strategy, enrichment waterfall design, and 5-email sequence outline.</p>
+                    <p>Architected tech stack implementation and provided expected metrics at each stage (leads → replies → meetings → opportunities) using HubSpot, GoHighLevel, reply.io, and other automation tools.</p>
+                    <p class="tech-stack">Tech Stack: HubSpot, GoHighLevel, reply.io, LinkedIn Sales Nav, Apify, Make, Azure AI Foundry</p>
+                    <div class="project-links">
+                        <a href="https://kontextgroup.co.uk/" class="btn btn-secondary" target="_blank">View Client Site</a>
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Strategy Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Adagbonyin Efeosa Funmilayo. All rights reserved.</p>
+            <p>Built with passion for innovation and automation 🚀</p>
+        </div>
+    </footer>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .skill-category').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
