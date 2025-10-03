@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist</title>
+    <meta name="description" content="Adagbonyin Efeosa Funmilayo: Full-Stack Developer & AI Automation Specialist. Expertise in Python, Django, Next.js, GoHighLevel, and AI-powered solutions for web development, marketing, and business automation.">
+    <meta property="og:title" content="Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist">
+    <meta property="og:description" content="Adagbonyin Efeosa Funmilayo: Full-Stack Developer & AI Automation Specialist. Expertise in Python, Django, Next.js, GoHighLevel, and AI-powered solutions for web development, marketing, and business automation.">
+    <meta property="og:image" content="https://example.com/your-profile-image.jpg"> <!-- Replace with actual image URL -->
+    <meta property="og:url" content="https://example.com/your-portfolio"> <!-- Replace with actual portfolio URL -->
+    <meta property="og:type" content="website">
     <style>
         * {
             margin: 0;
@@ -73,7 +79,7 @@
             position: relative;
             overflow: hidden;
             background-size: 200% 200%;
-            animation: gradientShift 8s ease infinite;
+            animation: gradientShift 12s ease infinite;
         }
 
         @keyframes gradientShift {
@@ -139,8 +145,8 @@
         h1 {
             font-size: 3.5em;
             margin-bottom: 10px;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            animation: glow 2s ease-in-out infinite alternate;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: glow 1.5s ease-in-out infinite alternate;
         }
 
         @keyframes glow {
@@ -162,6 +168,7 @@
             font-size: 1.1em;
             color: rgba(255,255,255,0.9);
             margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .experience-badge {
@@ -175,6 +182,7 @@
             border: 2px solid rgba(255,255,255,0.3);
             transition: all 0.3s;
             animation: float 3s ease-in-out infinite;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .experience-badge:nth-child(1) { animation-delay: 0s; }
@@ -234,6 +242,56 @@
         .contact-links a span {
             position: relative;
             z-index: 1;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-links a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-links a::after {
+            content: "";
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #64ffda;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover::after {
+            width: calc(100% - 20px);
+        }
+
+        .navbar-links a:hover {
+            color: #64ffda;
+            transform: translateY(-2px);
         }
 
         section {
@@ -483,6 +541,8 @@
             font-weight: bold;
             position: relative;
             overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
 
         .btn::before {
@@ -492,150 +552,88 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #64ffda 0%, #667eea 100%);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s;
-            z-index: -1;
         }
 
         .btn:hover::before {
-            left: 0;
+            left: 100%;
         }
 
         .btn:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, rgba(100, 255, 218, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
-            border: 2px solid #64ffda;
+            background: linear-gradient(135deg, #64ffda 0%, #667eea 100%);
         }
 
         .btn-secondary:hover {
-            background: linear-gradient(135deg, rgba(100, 255, 218, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
-            border-color: #f093fb;
+            box-shadow: 0 15px 35px rgba(100, 255, 218, 0.4);
         }
 
         .experience-timeline {
             position: relative;
-            padding-left: 60px;
-            margin-top: 50px;
+            padding-left: 30px;
         }
 
         .experience-timeline::before {
             content: '';
             position: absolute;
-            left: 25px;
+            left: 15px;
             top: 0;
             bottom: 0;
-            width: 4px;
-            background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            border-radius: 4px;
+            width: 2px;
+            background: linear-gradient(to bottom, #64ffda, #667eea);
         }
 
         .timeline-item {
             position: relative;
             margin-bottom: 50px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
             padding: 30px;
-            border-radius: 20px;
-            border-left: 4px solid #64ffda;
-            transition: all 0.4s ease;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border-radius: 15px;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.3s ease;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -63px;
+            left: -45px;
             top: 30px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
+            width: 15px;
+            height: 15px;
             background: #64ffda;
-            border: 4px solid #0a0e27;
-            box-shadow: 0 0 20px #64ffda;
-            animation: ping 2s ease infinite;
-        }
-
-        @keyframes ping {
-            0%, 100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.3);
-                opacity: 0.5;
-            }
+            border-radius: 50%;
+            border: 3px solid #0a0e27;
         }
 
         .timeline-item:hover {
-            transform: translateX(15px);
+            transform: translateX(10px);
+            border-color: #64ffda;
             box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
-            border-left-color: #f093fb;
         }
 
         .timeline-date {
             color: #64ffda;
             font-weight: bold;
-            margin-bottom: 12px;
             font-size: 1.1em;
+            margin-bottom: 10px;
         }
 
         .timeline-title {
-            font-size: 1.5em;
             color: #f093fb;
-            margin-bottom: 12px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
         .timeline-company {
             color: #667eea;
-            margin-bottom: 18px;
-            font-style: italic;
-            font-size: 1.1em;
-        }
-
-        footer {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            text-align: center;
-            padding: 40px 0;
-            margin-top: 80px;
-            border-top: 2px solid rgba(100, 255, 218, 0.2);
-        }
-
-        footer p {
-            color: #64ffda;
-            margin: 10px 0;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2em;
-            }
-
-            h2 {
-                font-size: 2em;
-            }
-
-            .projects-grid,
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                flex-direction: column;
-            }
-
-            .experience-timeline {
-                padding-left: 40px;
-            }
-
-            .experience-timeline::before {
-                left: 12px;
-            }
-
-            .timeline-item::before {
-                left: -50px;
-            }
+            font-size: 1.2em;
+            margin-bottom: 15px;
         }
 
         .scroll-top {
@@ -666,9 +664,161 @@
             transform: translateY(-10px) scale(1.1) rotate(360deg);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
         }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            font-size: 1em;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input::placeholder, .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: #64ffda;
+            box-shadow: 0 0 0 3px rgba(100, 255, 218, 0.5);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            align-self: center;
+            width: fit-content;
+            padding: 15px 40px;
+            font-size: 1.1em;
+        }
+
+        .contact-info p {
+            font-size: 1.15em;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #64ffda;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #f093fb;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            padding: 40px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            color: #64ffda;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+
+        .footer-section p, .footer-section li {
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .footer-section ul li a:hover {
+            color: #64ffda;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            h2 {
+                font-size: 2.2em;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar-links a {
+                margin: 0 5px;
+                padding: 8px 15px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
     <div class="particles" id="particles"></div>
 
     <header>
@@ -687,7 +837,7 @@
             <div class="contact-links">
                 <a href="mailto:efejasmine98@gmail.com"><span>📧 efejasmine98@gmail.com</span></a>
                 <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank"><span>💼 LinkedIn</span></a>
-                <a href="tel:+2290192603172"><span>📞 +229 019 2603 172</span></a>
+                <a href="tel:+2291926031721"><span>📞 +229 19 260 3172</span></a>
             </div>
         </div>
     </header>
@@ -702,7 +852,7 @@
                 <p>📍 Based in Bénin | 🌍 Available for remote opportunities worldwide</p>
             </div>
 
-            <div class="skills-grid">
+            <div id="skills" class="skills-grid">
                 <div class="skill-category">
                     <h3>Development & AI</h3>
                     <ul>
@@ -746,7 +896,7 @@
         <h2>Web Development & AI Projects</h2>
     </div>
 
-    <section id="dev-projects">
+    <section id="projects">
         <div class="container">
             <div class="projects-grid">
                 <div class="project-card">
@@ -755,8 +905,27 @@
                     <p>Managed ongoing site maintenance, product updates, SEO optimization, and customer experience enhancements to drive conversions and sales growth.</p>
                     <p class="tech-stack">Tech Stack: Shopify, Liquid, HTML/CSS, Payment Gateway Integration, SEO Optimization</p>
                     <div class="project-links">
-                        <a href="https://ebonicembrace.com/collections/salon-barber/" class="btn" target="_blank">View Live Site</a>
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Demos</a>
+                        <a href="https://ebonicembrace.com/collections/salon-barber/" class="btn" target="_blank">View Live Ebonic Embrace Site</a>
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Ebonic Embrace Demos</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>IJGBNaija Backend & AI Integration</h3>
+                    <p>Single-handedly architected and deployed a production-ready backend API for a booking platform using Python and Django REST Framework in just four days. Engineered a secure user registration and authentication system using JSON Web Tokens (JWT) and PostgreSQL.</p>
+                    <p>Integrated Celery and Redis for asynchronous task queuing. Currently developing the responsive frontend using Next.js and Tailwind CSS. Built and integrated a conversational AI agent for WhatsApp using n8n and Google Gemini for 24/7 customer support.</p>
+                    <p class="tech-stack">Tech Stack: Python, Django REST Framework, Next.js, PostgreSQL, Redis, Celery, n8n, Google Gemini</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View IJGBNaija Backend & AI Integration Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>N8N Gmail AI Automation</h3>
+                    <p>Designed and deployed an end-to-end AI-powered email support system that reduced manual inbox management time by over 75%. Engineered a multi-step workflow in n8n connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
+                    <p>Developed an intelligent agent that drafts context-aware, professional replies for support tickets, cutting response time by over 90% and ensuring service consistency.</p>
+                    <p class="tech-stack">Tech Stack: n8n, Gmail API, Google Gemini, Workflow Automation, AI Integration</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8I" class="btn" target="_blank">View N8N Gmail AI Automation Demo</a>
                     </div>
                 </div>
 
@@ -766,18 +935,7 @@
                     <p>Built complex compliance rules for location-based calendars and implemented automated appointment reminder workflows to reduce no-shows. Designed a scalable multi-subaccount architecture (Intake Hub + Franchise Locations).</p>
                     <p class="tech-stack">Tech Stack: GoHighLevel, API Integrations, Workflow Automation, Aircall</p>
                     <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Kontext Group UK - GTM Strategy</h3>
-                    <p>Developed comprehensive Go-To-Market strategy for Hungarian marketing agency expanding to UK market ($150k ARR). Delivered complete ICP definition with reasoning, lead sourcing strategy, enrichment waterfall design, and 5-email sequence outline.</p>
-                    <p>Architected tech stack implementation and provided expected metrics at each stage (leads → replies → meetings → opportunities) using HubSpot, GoHighLevel, reply.io, and other automation tools.</p>
-                    <p class="tech-stack">Tech Stack: HubSpot, GoHighLevel, reply.io, LinkedIn Sales Nav, Apify, Make, Azure AI Foundry</p>
-                    <div class="project-links">
-                        <a href="https://kontextgroup.co.uk/" class="btn btn-secondary" target="_blank">View Client Site</a>
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Strategy Demo</a>
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8" class="btn" target="_blank">View GoHighLevel Gym Management System Demo</a>
                     </div>
                 </div>
             </div>
@@ -884,12 +1042,19 @@
                 </div>
             </div>
 
-            <div class="about-content" style="text-align: center; margin-top: 60px;">
+            <div id="contact" class="about-content" style="text-align: center; margin-top: 60px;">
                 <h3 style="color: #64ffda; margin-bottom: 25px; font-size: 2em;">Ready to Work Together?</h3>
                 <p style="font-size: 1.15em; margin-bottom: 35px;">Every project is unique. Let's discuss your specific needs and create a custom solution that delivers real results for your business.</p>
-                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-                    <a href="mailto:efejasmine98@gmail.com" class="btn" style="font-size: 1.15em; padding: 18px 40px;">📧 Get a Custom Quote</a>
-                    <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" class="btn btn-secondary" target="_blank" style="font-size: 1.15em; padding: 18px 40px;">💼 Connect on LinkedIn</a>
+                <form name="contact" method="POST" data-netlify="true" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <p>📧 efejasmine98@gmail.com</p>
+                    <p>📞 +229 019 260 3172</p>
+                    <p>💼 <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">LinkedIn Profile</a></p>
                 </div>
             </div>
         </div>
@@ -897,8 +1062,33 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Adagbonyin Efeosa Funmilayo. All rights reserved.</p>
-            <p>Built with passion for innovation, automation, and business excellence 🚀</p>
+            <div class="footer-content">
+                <div class="footer-section about-me">
+                    <h3>Adagbonyin Efeosa Funmilayo</h3>
+                    <p>Full-Stack Developer & AI Automation Specialist. Building scalable solutions that drive business growth.</p>
+                </div>
+                <div class="footer-section quick-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://github.com/your-github-profile" target="_blank">GitHub</a></li> <!-- Replace with actual GitHub profile -->
+                        <li><a href="mailto:efejasmine98@gmail.com">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Adagbonyin Efeosa Funmilayo. All rights reserved.</p>
+                <p>Built with passion for innovation, automation, and business excellence 🚀</p>
+            </div>
         </div>
     </footer>
 
@@ -908,7 +1098,7 @@
         // Create floating particles
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+            const particleCount = 25;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
@@ -919,87 +1109,54 @@
                 particlesContainer.appendChild(particle);
             }
         }
-        
-        createParticles();
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll to top button
-        const scrollTop = document.getElementById('scrollTop');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 400) {
-                scrollTop.classList.add('visible');
-            } else {
-                scrollTop.classList.remove('visible');
-            }
-        });
-
-        scrollTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.project-card, .skill-category, .timeline-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            observer.observe(el);
-        });
-
-        // Parallax effect on scroll
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallaxElements = document.querySelectorAll('.project-card, .skill-category');
+        // Scroll to top functionality
+        function initScrollTop() {
+            const scrollTop = document.getElementById('scrollTop');
             
-            parallaxElements.forEach((el, index) => {
-                const speed = 0.5 + (index % 3) * 0.1;
-                const yPos = -(scrolled * speed / 100);
-                el.style.transform = `translateY(${yPos}px)`;
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('visible');
+                } else {
+                    scrollTop.classList.remove('visible');
+                }
             });
+            
+            scrollTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        function initSmoothScrolling() {
+            const navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const offsetTop = targetElement.offsetTop - 80; // Account for navbar height
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Initialize all functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            initScrollTop();
+            initSmoothScrolling();
         });
     </script>
 </body>
-</html>ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>IJGBNaija Backend & AI Integration</h3>
-                    <p>Single-handedly architected and deployed a production-ready backend API for a booking platform using Python and Django REST Framework in just four days. Engineered a secure user registration and authentication system using JSON Web Tokens (JWT) and PostgreSQL.</p>
-                    <p>Integrated Celery and Redis for asynchronous task queuing. Currently developing the responsive frontend using Next.js and Tailwind CSS. Built and integrated a conversational AI agent for WhatsApp using n8n and Google Gemini for 24/7 customer support.</p>
-                    <p class="tech-stack">Tech Stack: Python, Django REST Framework, Next.js, PostgreSQL, Redis, Celery, n8n, Google Gemini</p>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>N8N Gmail AI Automation</h3>
-                    <p>Designed and deployed an end-to-end AI-powered email support system that reduced manual inbox management time by over 75%. Engineered a multi-step workflow in n8n connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
-                    <p>Developed an intelligent agent that drafts context-aware, professional replies for support tickets, cutting response time by over 90% and ensuring service consistency.</p>
-                    <p class="tech-stack">Tech Stack: n8n, Gmail API, Google Gemini, Workflow Automation, AI Integration</p>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8
+</html>
