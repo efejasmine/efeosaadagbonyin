@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer | AI / GTM Automation Specialist & Business Operations Expert</title>
+    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist</title>
     <style>
         * {
             margin: 0;
@@ -15,62 +15,175 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #ffffff;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            background: #0a0e27;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(100, 255, 218, 0.5);
+            border-radius: 50%;
+            animation: float 20s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
+        /* Header with gradient animation */
         header {
-            background: linear-gradient(135deg, #00d084 0%, #00a86b 50%, #008751 100%);
-            padding: 80px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 100px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
         }
 
-        header::before {
-            content: '';
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating circles decoration */
+        .circle {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: moveBackground 20s linear infinite;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            animation: bounce 6s ease-in-out infinite;
         }
 
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+        .circle:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .circle:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 10%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
         }
 
         .header-content {
             position: relative;
             z-index: 1;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255,255,255,0.5), 0 0 20px rgba(255,255,255,0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,255,255,0.5);
+            }
         }
 
         .title {
-            font-size: 1.3em;
-            color: #e0f7f0;
+            font-size: 1.4em;
+            color: #fff;
             margin-bottom: 10px;
         }
 
         .subtitle {
             font-size: 1.1em;
-            color: #b8e6d5;
+            color: rgba(255,255,255,0.9);
             margin-bottom: 20px;
+        }
+
+        .experience-badge {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 30px;
+            margin: 10px 10px 10px 0;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .experience-badge:nth-child(1) { animation-delay: 0s; }
+        .experience-badge:nth-child(2) { animation-delay: 0.5s; }
+        .experience-badge:nth-child(3) { animation-delay: 1s; }
+
+        .experience-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: rgba(255,255,255,0.3);
         }
 
         .contact-links {
@@ -84,81 +197,165 @@
         .contact-links a {
             color: #ffffff;
             text-decoration: none;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 25px;
-            transition: all 0.3s;
+            padding: 14px 28px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-links a::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .contact-links a:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .contact-links a:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-3px);
+            transform: translateY(-8px) scale(1.05);
+            border-color: rgba(255,255,255,0.5);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .contact-links a span {
+            position: relative;
+            z-index: 1;
         }
 
         section {
-            padding: 60px 0;
+            padding: 80px 0;
+            position: relative;
         }
 
         h2 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            font-size: 3em;
+            margin-bottom: 50px;
             text-align: center;
-            background: linear-gradient(135deg, #00d084 0%, #00ffa3 100%);
+            background: linear-gradient(135deg, #64ffda 0%, #667eea 50%, #f093fb 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            position: relative;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .about-content {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            padding: 50px;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(0,208,132,0.3);
-            margin-bottom: 40px;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            margin-bottom: 50px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #64ffda, #667eea, #f093fb, #64ffda);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+            background-size: 400%;
+            animation: borderGlow 3s linear infinite;
+        }
+
+        .about-content:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 400% 50%; }
+        }
+
+        .about-content:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(100, 255, 218, 0.3);
         }
 
         .about-content p {
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .experience-badge {
-            display: inline-block;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
-            border-radius: 25px;
-            margin: 10px 10px 10px 0;
-            font-weight: bold;
+            font-size: 1.15em;
+            line-height: 1.9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
         }
 
         .skill-category {
-            background: linear-gradient(135deg, rgba(0,208,132,0.1) 0%, rgba(0,168,107,0.1) 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid rgba(0,208,132,0.3);
-            transition: all 0.3s;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.05) 0%, rgba(102, 126, 234, 0.05) 100%);
+            padding: 35px;
+            border-radius: 20px;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-category:hover::after {
+            left: 100%;
         }
 
         .skill-category:hover {
-            transform: translateY(-5px);
-            border-color: #00d084;
-            box-shadow: 0 10px 30px rgba(0,208,132,0.3);
+            transform: translateY(-15px) rotateX(5deg);
+            border-color: #64ffda;
+            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.4);
         }
 
         .skill-category h3 {
-            color: #00ffa3;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            color: #64ffda;
+            margin-bottom: 20px;
+            font-size: 1.6em;
         }
 
         .skill-category ul {
@@ -166,62 +363,56 @@
         }
 
         .skill-category li {
-            padding: 8px 0;
-            padding-left: 25px;
+            padding: 10px 0;
+            padding-left: 30px;
             position: relative;
+            transition: all 0.3s;
+        }
+
+        .skill-category li:hover {
+            padding-left: 40px;
+            color: #64ffda;
         }
 
         .skill-category li::before {
-            content: '▹';
+            content: '◆';
             position: absolute;
             left: 0;
-            color: #00d084;
-            font-size: 1.5em;
+            color: #667eea;
+            font-size: 1.3em;
+            animation: pulse 2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
         }
 
         .section-divider {
             text-align: center;
-            margin: 60px 0 40px;
+            margin: 80px 0 60px;
+            position: relative;
         }
 
         .section-divider h2 {
             display: inline-block;
             position: relative;
-            padding: 0 30px;
-        }
-
-        .section-divider h2::before,
-        .section-divider h2::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(135deg, #00d084 0%, transparent 100%);
-        }
-
-        .section-divider h2::before {
-            right: 100%;
-        }
-
-        .section-divider h2::after {
-            left: 100%;
-            background: linear-gradient(135deg, transparent 0%, #00d084 100%);
+            padding: 0 40px;
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .project-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 2px solid rgba(0,208,132,0.2);
-            transition: all 0.3s;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            padding: 35px;
+            border-radius: 25px;
+            border: 2px solid rgba(100, 255, 218, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
@@ -233,8 +424,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,208,132,0.1), transparent);
-            transition: left 0.5s;
+            background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.15), transparent);
+            transition: left 0.7s;
         }
 
         .project-card:hover::before {
@@ -242,134 +433,187 @@
         }
 
         .project-card:hover {
-            transform: translateY(-10px);
-            border-color: #00d084;
-            box-shadow: 0 15px 40px rgba(0,208,132,0.3);
+            transform: translateY(-20px) scale(1.03);
+            border-color: #64ffda;
+            box-shadow: 0 25px 60px rgba(100, 255, 218, 0.4);
         }
 
         .project-card h3 {
-            color: #00ffa3;
-            margin-bottom: 15px;
-            font-size: 1.8em;
+            color: #f093fb;
+            margin-bottom: 20px;
+            font-size: 1.9em;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover h3 {
+            color: #64ffda;
+            transform: translateX(10px);
         }
 
         .project-card p {
-            margin-bottom: 15px;
-            line-height: 1.6;
+            margin-bottom: 18px;
+            line-height: 1.7;
         }
 
         .tech-stack {
-            color: #00d084;
+            color: #667eea;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
         }
 
         .project-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 25px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #64ffda 0%, #667eea 100%);
+            transition: left 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            left: 0;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,208,132,0.4);
-            background: linear-gradient(135deg, #00ffa3 0%, #00d084 100%);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
         }
 
         .btn-secondary {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            border: 2px solid #00d084;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.2) 0%, rgba(102, 126, 234, 0.2) 100%);
+            border: 2px solid #64ffda;
         }
 
         .btn-secondary:hover {
-            background: rgba(0,208,132,0.2);
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.3) 0%, rgba(102, 126, 234, 0.3) 100%);
+            border-color: #f093fb;
         }
 
         .experience-timeline {
             position: relative;
-            padding-left: 50px;
-            margin-top: 40px;
+            padding-left: 60px;
+            margin-top: 50px;
         }
 
         .experience-timeline::before {
             content: '';
             position: absolute;
-            left: 20px;
+            left: 25px;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(180deg, #00d084 0%, #00a86b 100%);
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            border-radius: 4px;
         }
 
         .timeline-item {
             position: relative;
-            margin-bottom: 40px;
-            background: rgba(255,255,255,0.03);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 3px solid #00d084;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid #64ffda;
+            transition: all 0.4s ease;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -53px;
-            top: 25px;
-            width: 15px;
-            height: 15px;
+            left: -63px;
+            top: 30px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: #00d084;
-            border: 3px solid #1a3a45;
+            background: #64ffda;
+            border: 4px solid #0a0e27;
+            box-shadow: 0 0 20px #64ffda;
+            animation: ping 2s ease infinite;
+        }
+
+        @keyframes ping {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.5;
+            }
+        }
+
+        .timeline-item:hover {
+            transform: translateX(15px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
+            border-left-color: #f093fb;
         }
 
         .timeline-date {
-            color: #00ffa3;
+            color: #64ffda;
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.1em;
         }
 
         .timeline-title {
-            font-size: 1.3em;
-            color: #00d084;
-            margin-bottom: 10px;
+            font-size: 1.5em;
+            color: #f093fb;
+            margin-bottom: 12px;
         }
 
         .timeline-company {
-            color: #b8e6d5;
-            margin-bottom: 15px;
+            color: #667eea;
+            margin-bottom: 18px;
             font-style: italic;
+            font-size: 1.1em;
         }
 
         footer {
-            background: rgba(0,0,0,0.3);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
+            padding: 40px 0;
+            margin-top: 80px;
+            border-top: 2px solid rgba(100, 255, 218, 0.2);
         }
 
         footer p {
-            color: #00ffa3;
+            color: #64ffda;
+            margin: 10px 0;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
             h2 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .projects-grid,
@@ -382,35 +626,36 @@
             }
 
             .experience-timeline {
-                padding-left: 30px;
+                padding-left: 40px;
             }
 
             .experience-timeline::before {
-                left: 10px;
+                left: 12px;
             }
 
             .timeline-item::before {
-                left: -43px;
+                left: -50px;
             }
         }
 
         .scroll-top {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: linear-gradient(135deg, #00d084 0%, #00a86b 100%);
+            bottom: 40px;
+            right: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             opacity: 0;
-            transition: all 0.3s;
-            font-size: 1.5em;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.8em;
             z-index: 1000;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
         .scroll-top.visible {
@@ -418,26 +663,31 @@
         }
 
         .scroll-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,208,132,0.4);
+            transform: translateY(-10px) scale(1.1) rotate(360deg);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
         }
     </style>
 </head>
 <body>
+    <div class="particles" id="particles"></div>
+
     <header>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
         <div class="header-content">
             <h1>Adagbonyin Efeosa Funmilayo</h1>
             <p class="title">Full-Stack Web Developer | AI Automation Specialist | GoHighLevel Architect</p>
             <p class="subtitle">Senior Virtual Assistant & Business Operations Expert</p>
-            <div style="margin: 20px 0;">
+            <div style="margin: 25px 0;">
                 <span class="experience-badge">🚀 3 Years Web Dev & AI</span>
                 <span class="experience-badge">💼 7 Years Virtual Assistant</span>
                 <span class="experience-badge">🌍 10 Years Combined Experience</span>
             </div>
             <div class="contact-links">
-                <a href="mailto:efejasmine98@gmail.com">📧 efejasmine98@gmail.com</a>
-                <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">💼 LinkedIn</a>
-                <a href="tel:+2290192603172">📞 +229 019 2603 172</a>
+                <a href="mailto:efejasmine98@gmail.com"><span>📧 efejasmine98@gmail.com</span></a>
+                <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank"><span>💼 LinkedIn</span></a>
+                <a href="tel:+2290192603172"><span>📞 +229 019 2603 172</span></a>
             </div>
         </div>
     </header>
@@ -521,27 +771,6 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>IJGBNaija Backend & AI Integration</h3>
-                    <p>Single-handedly architected and deployed a production-ready backend API for a booking platform using Python and Django REST Framework in just four days. Engineered a secure user registration and authentication system using JSON Web Tokens (JWT) and PostgreSQL.</p>
-                    <p>Integrated Celery and Redis for asynchronous task queuing. Currently developing the responsive frontend using Next.js and Tailwind CSS. Built and integrated a conversational AI agent for WhatsApp using n8n and Google Gemini for 24/7 customer support.</p>
-                    <p class="tech-stack">Tech Stack: Python, Django REST Framework, Next.js, PostgreSQL, Redis, Celery, n8n, Google Gemini</p>
-                    <div class="project-links">
-                        <a href="#" class="btn">GitHub (Coming Soon)</a>
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>N8N Gmail AI Automation</h3>
-                    <p>Designed and deployed an end-to-end AI-powered email support system that reduced manual inbox management time by over 75%. Engineered a multi-step workflow in n8n connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
-                    <p>Developed an intelligent agent that drafts context-aware, professional replies for support tickets, cutting response time by over 90% and ensuring service consistency.</p>
-                    <p class="tech-stack">Tech Stack: n8n, Gmail API, Google Gemini, Workflow Automation, AI Integration</p>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
                     <h3>Kontext Group UK - GTM Strategy</h3>
                     <p>Developed comprehensive Go-To-Market strategy for Hungarian marketing agency expanding to UK market ($150k ARR). Delivered complete ICP definition with reasoning, lead sourcing strategy, enrichment waterfall design, and 5-email sequence outline.</p>
                     <p>Architected tech stack implementation and provided expected metrics at each stage (leads → replies → meetings → opportunities) using HubSpot, GoHighLevel, reply.io, and other automation tools.</p>
@@ -561,8 +790,8 @@
 
     <section id="va-experience">
         <div class="container">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <a href="https://drive.google.com/drive/folders/1hnxvX2TI2VBUt9dwJ_DltLZ3hlStOoyj" class="btn" target="_blank" style="font-size: 1.2em; padding: 15px 35px;">📁 View All VA Project Demos</a>
+            <div style="text-align: center; margin-bottom: 50px;">
+                <a href="https://drive.google.com/drive/folders/1hnxvX2TI2VBUt9dwJ_DltLZ3hlStOoyj" class="btn" target="_blank" style="font-size: 1.3em; padding: 18px 40px;">📁 View All VA Project Demos</a>
             </div>
 
             <div class="experience-timeline">
@@ -593,7 +822,7 @@
                     <p>Provided elite, 24/7 customer support for international clients during high-stakes events, resolving issues immediately to ensure a seamless and positive experience.</p>
                     <p>Managed all client-facing communication, including drafting professional itineraries, booking confirmations, and follow-up emails, leading to high rates of repeat business.</p>
                     <p>Maintained meticulous records of all bookings, schedules, and client preferences, ensuring flawless execution of complex logistical arrangements.</p>
-                    <div class="project-links" style="margin-top: 20px;">
+                    <div class="project-links" style="margin-top: 25px;">
                         <a href="https://maps.app.goo.gl/vES1c9bGVLa8EzPR7" class="btn btn-secondary" target="_blank">View Google My Business Profile</a>
                     </div>
                 </div>
@@ -607,60 +836,60 @@
 
     <section id="pricing">
         <div class="container">
-            <div class="about-content" style="text-align: center; margin-bottom: 40px;">
-                <p style="font-size: 1.2em; margin-bottom: 30px;">Professional rates that reflect quality, expertise, and results. All projects include consultation, implementation, and post-launch support.</p>
+            <div class="about-content" style="text-align: center; margin-bottom: 50px;">
+                <p style="font-size: 1.25em; margin-bottom: 30px;">Professional rates that reflect quality, expertise, and results. All projects include consultation, implementation, and post-launch support.</p>
             </div>
 
             <div class="projects-grid">
                 <div class="project-card" style="text-align: center;">
                     <h3>💻 Web Development</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$50+</div>
-                    <p style="color: #b8e6d5;">Per Hour</p>
-                    <p style="margin-top: 20px;">Custom websites, web applications, frontend/backend development, API integrations</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$50+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Per Hour</p>
+                    <p style="margin-top: 25px;">Custom websites, web applications, frontend/backend development, API integrations</p>
                 </div>
 
                 <div class="project-card" style="text-align: center;">
                     <h3>🚀 Full-Stack Projects</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$3,500+</div>
-                    <p style="color: #b8e6d5;">Project-Based</p>
-                    <p style="margin-top: 20px;">Complete web applications with frontend, backend, database, authentication, and deployment</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$3,500+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Project-Based</p>
+                    <p style="margin-top: 25px;">Complete web applications with frontend, backend, database, authentication, and deployment</p>
                 </div>
 
                 <div class="project-card" style="text-align: center;">
                     <h3>🎯 GoHighLevel Setup</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$2,000+</div>
-                    <p style="color: #b8e6d5;">Per Implementation</p>
-                    <p style="margin-top: 20px;">Complete CRM architecture, workflows, automations, sub-account setup, and training</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$2,000+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Per Implementation</p>
+                    <p style="margin-top: 25px;">Complete CRM architecture, workflows, automations, sub-account setup, and training</p>
                 </div>
 
                 <div class="project-card" style="text-align: center;">
                     <h3>📊 GTM Engineering</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$1,500+</div>
-                    <p style="color: #b8e6d5;">Per Strategy</p>
-                    <p style="margin-top: 20px;">Go-to-market strategy, ICP definition, lead sourcing, email sequences, tech stack setup</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$1,500+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Per Strategy</p>
+                    <p style="margin-top: 25px;">Go-to-market strategy, ICP definition, lead sourcing, email sequences, tech stack setup</p>
                 </div>
 
                 <div class="project-card" style="text-align: center;">
                     <h3>📈 Digital Marketing</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$1,000+</div>
-                    <p style="color: #b8e6d5;">Per Campaign</p>
-                    <p style="margin-top: 20px;">SEO strategy, content marketing, Meta Ads, Google Analytics setup and optimization</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$1,000+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Per Campaign</p>
+                    <p style="margin-top: 25px;">SEO strategy, content marketing, Meta Ads, Google Analytics setup and optimization</p>
                 </div>
 
                 <div class="project-card" style="text-align: center;">
                     <h3>💼 Virtual Assistant Services</h3>
-                    <div style="font-size: 2.5em; color: #00ffa3; margin: 20px 0; font-weight: bold;">$25+</div>
-                    <p style="color: #b8e6d5;">Per Hour</p>
-                    <p style="margin-top: 20px;">Administrative support, inbox management, CRM administration, client coordination</p>
+                    <div style="font-size: 2.8em; color: #64ffda; margin: 25px 0; font-weight: bold;">$25+</div>
+                    <p style="color: #667eea; font-size: 1.1em;">Per Hour</p>
+                    <p style="margin-top: 25px;">Administrative support, inbox management, CRM administration, client coordination</p>
                 </div>
             </div>
 
-            <div class="about-content" style="text-align: center; margin-top: 50px;">
-                <h3 style="color: #00ffa3; margin-bottom: 20px; font-size: 1.8em;">Ready to Work Together?</h3>
-                <p style="font-size: 1.1em; margin-bottom: 30px;">Every project is unique. Let's discuss your specific needs and create a custom solution that delivers real results for your business.</p>
-                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                    <a href="mailto:efejasmine98@gmail.com" class="btn" style="font-size: 1.1em; padding: 15px 35px;">📧 Get a Custom Quote</a>
-                    <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" class="btn btn-secondary" target="_blank" style="font-size: 1.1em; padding: 15px 35px;">💼 Connect on LinkedIn</a>
+            <div class="about-content" style="text-align: center; margin-top: 60px;">
+                <h3 style="color: #64ffda; margin-bottom: 25px; font-size: 2em;">Ready to Work Together?</h3>
+                <p style="font-size: 1.15em; margin-bottom: 35px;">Every project is unique. Let's discuss your specific needs and create a custom solution that delivers real results for your business.</p>
+                <div style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
+                    <a href="mailto:efejasmine98@gmail.com" class="btn" style="font-size: 1.15em; padding: 18px 40px;">📧 Get a Custom Quote</a>
+                    <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" class="btn btn-secondary" target="_blank" style="font-size: 1.15em; padding: 18px 40px;">💼 Connect on LinkedIn</a>
                 </div>
             </div>
         </div>
@@ -676,19 +905,38 @@
     <div class="scroll-top" id="scrollTop">↑</div>
 
     <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
 
+        // Scroll to top button
         const scrollTop = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 400) {
                 scrollTop.classList.add('visible');
             } else {
                 scrollTop.classList.remove('visible');
@@ -699,9 +947,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -715,10 +964,42 @@
 
         document.querySelectorAll('.project-card, .skill-category, .timeline-item').forEach(el => {
             el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             observer.observe(el);
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.project-card, .skill-category');
+            
+            parallaxElements.forEach((el, index) => {
+                const speed = 0.5 + (index % 3) * 0.1;
+                const yPos = -(scrolled * speed / 100);
+                el.style.transform = `translateY(${yPos}px)`;
+            });
         });
     </script>
 </body>
-</html>
+</html>ZgE" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>IJGBNaija Backend & AI Integration</h3>
+                    <p>Single-handedly architected and deployed a production-ready backend API for a booking platform using Python and Django REST Framework in just four days. Engineered a secure user registration and authentication system using JSON Web Tokens (JWT) and PostgreSQL.</p>
+                    <p>Integrated Celery and Redis for asynchronous task queuing. Currently developing the responsive frontend using Next.js and Tailwind CSS. Built and integrated a conversational AI agent for WhatsApp using n8n and Google Gemini for 24/7 customer support.</p>
+                    <p class="tech-stack">Tech Stack: Python, Django REST Framework, Next.js, PostgreSQL, Redis, Celery, n8n, Google Gemini</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>N8N Gmail AI Automation</h3>
+                    <p>Designed and deployed an end-to-end AI-powered email support system that reduced manual inbox management time by over 75%. Engineered a multi-step workflow in n8n connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
+                    <p>Developed an intelligent agent that drafts context-aware, professional replies for support tickets, cutting response time by over 90% and ensuring service consistency.</p>
+                    <p class="tech-stack">Tech Stack: n8n, Gmail API, Google Gemini, Workflow Automation, AI Integration</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8
