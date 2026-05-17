@@ -1,734 +1,1386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adagbonyin Efeosa Funmilayo | Full-Stack Developer & AI Automation Specialist</title>
-    <meta name="description" content="Full-Stack Developer specializing in Python, Django, Next.js, AI automation, and business systems. 10 years combined experience in web development and operations.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adagbonyin Efeosa Funmilayo | AI Operations Specialist & Full-Stack Developer</title>
+<meta name="description" content="AI Operations Specialist, n8n Automation Engineer, and Full-Stack Developer. 10,666 LinkedIn impressions. 76 qualified leads in 2 weeks. Based in Lagos, Nigeria — serving clients worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --forest:      #2C4A3E;
+  --forest-deep: #1a2e27;
+  --forest-mid:  #233d33;
+  --forest-lite: #3d6355;
+  --gold:        #B8965A;
+  --gold-light:  #D4B483;
+  --gold-pale:   #e8d5b0;
+  --cream:       #FAF8F4;
+  --cream-2:     #F0EDE6;
+  --cream-3:     #E8E3D8;
+  --ink:         #1C1C1C;
+  --ink-2:       #3a3a3a;
+  --muted:       #7a7a7a;
+  --white:       #ffffff;
+  --ease:        cubic-bezier(.22,.68,0,1.2);
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #ffffff;
-            background: #0a0e27;
-            overflow-x: hidden;
-        }
+/* ── RESET ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.7;
+  overflow-x:hidden;
+}
 
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
+/* ── SELECTION ── */
+::selection{background:var(--gold);color:var(--forest-deep);}
 
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: rgba(100, 255, 218, 0.5);
-            border-radius: 50%;
-            animation: float 20s infinite;
-        }
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--cream-2);}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px;}
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% {
-                transform: translateY(-100vh) translateX(100px);
-                opacity: 0;
-            }
-        }
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+.nav{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  padding:0 48px;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(250,248,244,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(184,150,90,.15);
+  transition:box-shadow .3s;
+}
+.nav.scrolled{box-shadow:0 2px 24px rgba(26,46,39,.08);}
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  font-weight:500;
+  color:var(--forest-deep);
+  letter-spacing:.5px;
+  text-decoration:none;
+}
+.nav-brand span{color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  font-size:12px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--ink-2);text-decoration:none;
+  transition:color .2s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:1px;background:var(--gold);
+  transition:width .3s var(--ease);
+}
+.nav-links a:hover{color:var(--forest);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  display:inline-block;
+  padding:9px 22px;
+  background:var(--forest);
+  color:var(--cream)!important;
+  border-radius:2px;
+  font-size:11px!important;
+  letter-spacing:2px!important;
+  transition:background .2s!important;
+}
+.nav-cta:hover{background:var(--forest-lite)!important;}
+.nav-cta::after{display:none!important;}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero{
+  min-height:100vh;
+  background:var(--forest-deep);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  padding:120px 80px 80px;
+  gap:60px;
+}
+/* geometric bg lines */
+.hero::before{
+  content:'';position:absolute;
+  top:0;right:0;width:55%;height:100%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(184,150,90,.04) 0px,
+      rgba(184,150,90,.04) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(184,150,90,.04) 0px,
+      rgba(184,150,90,.04) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;
+  bottom:-200px;right:-200px;
+  width:600px;height:600px;
+  border-radius:50%;
+  border:1px solid rgba(184,150,90,.1);
+  pointer-events:none;
+}
 
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background-size: 200% 200%;
-            animation: gradientShift 12s ease infinite;
-        }
+.hero-left{
+  position:relative;z-index:1;
+  animation:fadeUp .8s var(--ease) both;
+}
+.hero-eyebrow{
+  font-size:10px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:24px;
+  display:flex;align-items:center;gap:12px;
+}
+.hero-eyebrow::before{
+  content:'';display:block;width:32px;height:1px;background:var(--gold);
+}
+.hero-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(48px,5.5vw,76px);
+  font-weight:300;
+  line-height:1.05;
+  color:var(--cream);
+  margin-bottom:8px;
+}
+.hero-name em{
+  font-style:italic;
+  color:var(--gold-light);
+}
+.hero-role{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,2vw,24px);
+  font-weight:300;
+  color:rgba(250,248,244,.55);
+  margin-bottom:36px;
+  font-style:italic;
+}
+.hero-divider{
+  width:60px;height:1px;
+  background:var(--gold);
+  margin-bottom:28px;
+}
+.hero-desc{
+  font-size:14px;
+  color:rgba(250,248,244,.7);
+  max-width:460px;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+.hero-desc strong{color:var(--gold-light);}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--gold);
+  color:var(--forest-deep);
+  font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;
+  border-radius:2px;
+  transition:background .2s,transform .2s;
+}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-ghost{
+  display:inline-block;
+  padding:14px 32px;
+  border:1px solid rgba(250,248,244,.25);
+  color:rgba(250,248,244,.85);
+  font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  text-decoration:none;
+  border-radius:2px;
+  transition:border-color .2s,color .2s,transform .2s;
+}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+/* hero right — stats panel */
+.hero-right{
+  position:relative;z-index:1;
+  animation:fadeUp .8s .15s var(--ease) both;
+}
+.stats-panel{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(184,150,90,.2);
+  border-radius:4px;
+  overflow:hidden;
+}
+.stats-panel-header{
+  padding:20px 28px;
+  border-bottom:1px solid rgba(184,150,90,.15);
+  display:flex;align-items:center;gap:10px;
+}
+.stats-panel-header .dot{
+  width:8px;height:8px;border-radius:50%;
+}
+.dot-g{background:#3dd68c;}
+.dot-y{background:#f5c542;}
+.dot-r{background:#f5655a;}
+.stats-panel-label{
+  font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(250,248,244,.3);
+  margin-left:8px;
+}
+.stats-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:rgba(184,150,90,.1);
+}
+.stat-cell{
+  background:var(--forest-mid);
+  padding:28px 24px;
+}
+.stat-number{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;font-weight:500;
+  color:var(--cream);
+  line-height:1;
+  display:block;
+  margin-bottom:6px;
+}
+.stat-number em{font-style:normal;color:var(--gold);}
+.stat-desc{
+  font-size:11px;
+  color:rgba(250,248,244,.45);
+  line-height:1.5;
+  letter-spacing:.5px;
+}
+.stat-cell.highlight{background:var(--forest-lite);}
 
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+/* badges row */
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:28px;
+}
+.badge{
+  padding:6px 14px;
+  background:rgba(184,150,90,.12);
+  border:1px solid rgba(184,150,90,.2);
+  border-radius:2px;
+  font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold-light);
+}
 
-        .title {
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
+/* ══════════════════════════════════════
+   SECTION WRAPPER
+══════════════════════════════════════ */
+section{padding:100px 80px;}
+.section-eyebrow{
+  font-size:10px;font-weight:600;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:12px;
+  display:flex;align-items:center;gap:12px;
+}
+.section-eyebrow::before{
+  content:'';display:block;width:24px;height:1px;background:var(--gold);
+}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(32px,3.5vw,48px);
+  font-weight:500;
+  color:var(--forest-deep);
+  line-height:1.15;
+  margin-bottom:16px;
+}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-lead{
+  font-size:15px;
+  color:var(--ink-2);
+  max-width:560px;
+  line-height:1.8;
+  margin-bottom:56px;
+}
 
-        .subtitle {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
+/* ══════════════════════════════════════
+   ABOUT
+══════════════════════════════════════ */
+.about{background:var(--cream);}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:start;
+}
+.about-copy p{
+  color:var(--ink-2);
+  font-size:14.5px;
+  line-height:1.9;
+  margin-bottom:20px;
+}
+.about-copy strong{color:var(--forest);}
+.about-copy .lead-stat{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;
+  color:var(--forest);
+  font-style:italic;
+  border-left:2px solid var(--gold);
+  padding-left:20px;
+  margin:28px 0;
+  line-height:1.6;
+}
 
-        .experience-badge {
-            display: inline-block;
-            padding: 12px 25px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 30px;
-            margin: 10px 10px 10px 0;
-            font-weight: bold;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.3);
-        }
+/* method cards */
+.method-grid{
+  display:flex;flex-direction:column;gap:2px;
+}
+.method-card{
+  background:var(--forest-deep);
+  padding:28px 32px;
+  position:relative;
+  overflow:hidden;
+  cursor:default;
+  transition:transform .3s var(--ease);
+}
+.method-card:hover{transform:translateX(8px);}
+.method-card::before{
+  content:'';position:absolute;
+  left:0;top:0;bottom:0;width:3px;
+  background:var(--gold);
+}
+.method-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:11px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:8px;
+}
+.method-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;
+  color:var(--cream);
+  margin-bottom:6px;
+}
+.method-desc{font-size:12.5px;color:rgba(250,248,244,.55);line-height:1.7;}
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+/* ══════════════════════════════════════
+   SKILLS
+══════════════════════════════════════ */
+.skills{background:var(--forest-deep);}
+.skills .section-title{color:var(--cream);}
+.skills .section-lead{color:rgba(250,248,244,.55);}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(184,150,90,.08);
+}
+.skill-block{
+  background:var(--forest-mid);
+  padding:36px 32px;
+  transition:background .2s;
+}
+.skill-block:hover{background:var(--forest-lite);}
+.skill-block-icon{
+  font-size:28px;margin-bottom:16px;
+  display:block;
+}
+.skill-block-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:20px;font-weight:500;
+  color:var(--gold-light);
+  margin-bottom:16px;
+}
+.skill-list{list-style:none;}
+.skill-list li{
+  font-size:12.5px;
+  color:rgba(250,248,244,.6);
+  padding:7px 0;
+  border-bottom:1px solid rgba(184,150,90,.08);
+  display:flex;align-items:center;gap:8px;
+}
+.skill-list li:last-child{border-bottom:none;}
+.skill-list li::before{
+  content:'';
+  display:block;width:4px;height:4px;
+  background:var(--gold);border-radius:50%;
+  flex-shrink:0;
+}
 
-        .contact-links a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 14px 28px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 30px;
-            transition: all 0.4s;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255,255,255,0.2);
-        }
+/* ══════════════════════════════════════
+   PROJECTS
+══════════════════════════════════════ */
+.projects{background:var(--cream);}
+.projects-layout{display:flex;flex-direction:column;gap:2px;}
 
-        .contact-links a:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.25);
-        }
+/* featured project — full width */
+.project-featured{
+  background:var(--forest-deep);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  overflow:hidden;
+  position:relative;
+}
+.project-featured-badge{
+  position:absolute;top:32px;right:32px;
+  background:var(--gold);
+  color:var(--forest-deep);
+  font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;
+  border-radius:2px;
+}
+.project-featured-left{
+  padding:56px 52px;
+  border-right:1px solid rgba(184,150,90,.12);
+}
+.project-featured-right{
+  padding:56px 52px;
+  background:rgba(255,255,255,.02);
+}
+.project-label{
+  font-size:9px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.project-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(26px,2.5vw,36px);
+  font-weight:500;
+  color:var(--cream);
+  line-height:1.2;
+  margin-bottom:16px;
+}
+.project-desc{
+  font-size:13.5px;
+  color:rgba(250,248,244,.6);
+  line-height:1.8;
+  margin-bottom:24px;
+}
+.project-stack{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-bottom:28px;
+}
+.stack-tag{
+  padding:4px 10px;
+  background:rgba(184,150,90,.1);
+  border:1px solid rgba(184,150,90,.2);
+  border-radius:2px;
+  font-size:10px;color:var(--gold-light);
+  letter-spacing:.5px;
+}
+.project-results{
+  border-top:1px solid rgba(184,150,90,.15);
+  padding-top:24px;
+  margin-top:4px;
+}
+.project-results-title{
+  font-size:10px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.result-row{
+  display:flex;align-items:baseline;gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid rgba(184,150,90,.07);
+}
+.result-row:last-child{border-bottom:none;}
+.result-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;
+  color:var(--cream);
+  min-width:80px;
+  flex-shrink:0;
+}
+.result-label{
+  font-size:12px;
+  color:rgba(250,248,244,.5);
+}
+.project-feature-list{
+  list-style:none;margin-bottom:24px;
+}
+.project-feature-list li{
+  font-size:13px;
+  color:rgba(250,248,244,.6);
+  padding:8px 0 8px 20px;
+  position:relative;
+  border-bottom:1px solid rgba(184,150,90,.06);
+  line-height:1.6;
+}
+.project-feature-list li:last-child{border-bottom:none;}
+.project-feature-list li::before{
+  content:'→';
+  position:absolute;left:0;
+  color:var(--gold);font-size:12px;
+}
+.project-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.proj-btn{
+  display:inline-block;
+  padding:11px 22px;
+  font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  border-radius:2px;
+  text-decoration:none;
+  transition:transform .2s,background .2s;
+}
+.proj-btn:hover{transform:translateY(-2px);}
+.proj-btn-solid{background:var(--gold);color:var(--forest-deep);}
+.proj-btn-solid:hover{background:var(--gold-light);}
+.proj-btn-outline{
+  border:1px solid rgba(250,248,244,.2);
+  color:rgba(250,248,244,.7);
+}
+.proj-btn-outline:hover{border-color:var(--gold);color:var(--gold);}
 
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
+/* grid of smaller project cards */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(44,74,62,.06);
+}
+.project-card{
+  background:var(--cream);
+  padding:36px 32px;
+  transition:background .2s;
+  position:relative;
+}
+.project-card:hover{background:var(--cream-2);}
+.project-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:2px;
+  background:transparent;
+  transition:background .3s;
+}
+.project-card:hover::before{background:var(--gold);}
+.card-label{
+  font-size:9px;font-weight:600;
+  letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:10px;
+}
+.card-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;
+  color:var(--forest-deep);
+  margin-bottom:12px;
+  line-height:1.2;
+}
+.card-desc{
+  font-size:13px;color:var(--ink-2);
+  line-height:1.75;margin-bottom:16px;
+}
+.card-stack{
+  display:flex;flex-wrap:wrap;gap:5px;
+  margin-bottom:20px;
+}
+.card-tag{
+  padding:3px 8px;
+  background:rgba(44,74,62,.07);
+  border:1px solid rgba(44,74,62,.12);
+  border-radius:2px;
+  font-size:10px;color:var(--forest);
+}
+.card-link{
+  display:inline-block;
+  font-size:11px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold);text-decoration:none;
+  border-bottom:1px solid rgba(184,150,90,.3);
+  padding-bottom:2px;
+  transition:border-color .2s,color .2s;
+}
+.card-link:hover{color:var(--forest);border-color:var(--forest);}
 
-        .navbar .container {
-            display: flex;
-            justify-content: center;
-        }
+/* rangeview badge on cards */
+.card-badge{
+  display:inline-block;
+  padding:2px 8px;
+  background:rgba(44,74,62,.1);
+  border-radius:2px;
+  font-size:9px;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--forest);
+  margin-bottom:8px;
+}
 
-        .navbar-links a {
-            color: #ffffff;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
+/* ══════════════════════════════════════
+   EXPERIENCE
+══════════════════════════════════════ */
+.experience{background:var(--forest-deep);}
+.experience .section-title{color:var(--cream);}
+.experience .section-lead{color:rgba(250,248,244,.5);}
+.exp-list{display:flex;flex-direction:column;gap:2px;}
+.exp-item{
+  background:var(--forest-mid);
+  display:grid;
+  grid-template-columns:200px 1fr;
+  gap:0;
+  transition:background .2s;
+}
+.exp-item:hover{background:var(--forest-lite);}
+.exp-left{
+  padding:32px 28px;
+  border-right:1px solid rgba(184,150,90,.1);
+}
+.exp-date{
+  font-size:10px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:10px;
+}
+.exp-company{
+  font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-weight:500;
+  color:var(--cream);
+  line-height:1.3;
+}
+.exp-right{padding:32px 40px;}
+.exp-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;font-weight:500;
+  color:var(--gold-light);
+  margin-bottom:10px;
+}
+.exp-desc{
+  font-size:13px;color:rgba(250,248,244,.55);
+  line-height:1.8;
+}
+.exp-desc p{margin-bottom:8px;}
+.exp-results{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin-top:14px;
+}
+.exp-result-tag{
+  padding:4px 12px;
+  background:rgba(184,150,90,.1);
+  border:1px solid rgba(184,150,90,.15);
+  border-radius:2px;
+  font-size:10px;font-weight:600;
+  color:var(--gold-light);
+  letter-spacing:.5px;
+}
 
-        .navbar-links a:hover {
-            color: #64ffda;
-        }
+/* ══════════════════════════════════════
+   RESULTS BAND
+══════════════════════════════════════ */
+.results-band{
+  background:var(--gold);
+  padding:64px 80px;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1px;
+  background:var(--gold);
+}
+.result-cell{
+  background:var(--gold);
+  padding:32px 24px;
+  text-align:center;
+}
+.result-cell-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:44px;font-weight:500;
+  color:var(--forest-deep);
+  display:block;
+  line-height:1;
+  margin-bottom:8px;
+}
+.result-cell-label{
+  font-size:10px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(26,46,39,.65);
+  line-height:1.5;
+}
 
-        section {
-            padding: 80px 0;
-        }
+/* ══════════════════════════════════════
+   CONTACT
+══════════════════════════════════════ */
+.contact{background:var(--cream);}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.contact-copy p{
+  font-size:14.5px;color:var(--ink-2);
+  line-height:1.8;margin-bottom:16px;
+}
+.contact-details{
+  display:flex;flex-direction:column;gap:2px;
+  margin-top:36px;
+}
+.contact-row{
+  display:flex;align-items:center;gap:16px;
+  padding:16px 20px;
+  background:var(--cream-2);
+  border-left:2px solid transparent;
+  transition:border-color .2s,background .2s;
+  text-decoration:none;
+}
+.contact-row:hover{
+  border-left-color:var(--gold);
+  background:var(--cream-3);
+}
+.contact-row-label{
+  font-size:10px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--muted);
+  min-width:80px;
+}
+.contact-row-value{
+  font-size:13.5px;color:var(--forest);
+  font-weight:500;
+}
+.availability-box{
+  background:var(--forest-deep);
+  padding:40px;
+  border-radius:2px;
+}
+.availability-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:24px;font-weight:500;
+  color:var(--cream);
+  margin-bottom:8px;
+}
+.availability-status{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+}
+.status-dot{
+  width:8px;height:8px;
+  border-radius:50%;background:#3dd68c;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(61,214,140,.4);}
+  50%{box-shadow:0 0 0 6px rgba(61,214,140,0);}
+}
+.status-text{font-size:12px;color:rgba(250,248,244,.55);}
+.availability-list{list-style:none;}
+.availability-list li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(184,150,90,.1);
+  font-size:13px;color:rgba(250,248,244,.6);
+  display:flex;align-items:center;gap:10px;
+}
+.availability-list li:last-child{border-bottom:none;}
+.availability-list li::before{
+  content:'✓';color:var(--gold);font-size:11px;
+}
 
-        h2 {
-            font-size: 3em;
-            margin-bottom: 50px;
-            text-align: center;
-            background: linear-gradient(135deg, #64ffda 0%, #667eea 50%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{
+  background:var(--forest-deep);
+  padding:40px 80px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid rgba(184,150,90,.1);
+}
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:16px;color:rgba(250,248,244,.5);
+}
+.footer-copy{
+  font-size:11px;color:rgba(250,248,244,.25);
+  letter-spacing:1px;
+}
+.footer-links{display:flex;gap:24px;}
+.footer-links a{
+  font-size:11px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(250,248,244,.35);
+  text-decoration:none;
+  transition:color .2s;
+}
+.footer-links a:hover{color:var(--gold);}
 
-        .about-content {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            padding: 50px;
-            border-radius: 20px;
-            border: 2px solid rgba(100, 255, 218, 0.2);
-            margin-bottom: 50px;
-        }
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.reveal{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
 
-        .about-content p {
-            font-size: 1.15em;
-            line-height: 1.9;
-            margin-bottom: 25px;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, rgba(100, 255, 218, 0.05) 0%, rgba(102, 126, 234, 0.05) 100%);
-            padding: 35px;
-            border-radius: 20px;
-            border: 2px solid rgba(100, 255, 218, 0.2);
-            transition: all 0.4s;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-10px);
-            border-color: #64ffda;
-            box-shadow: 0 15px 40px rgba(100, 255, 218, 0.3);
-        }
-
-        .skill-category h3 {
-            color: #64ffda;
-            margin-bottom: 20px;
-            font-size: 1.6em;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            padding: 10px 0;
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .skill-category li::before {
-            content: '◆';
-            position: absolute;
-            left: 0;
-            color: #667eea;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .project-card {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
-            padding: 35px;
-            border-radius: 25px;
-            border: 2px solid rgba(100, 255, 218, 0.2);
-            transition: all 0.5s;
-        }
-
-        .project-card.flagship {
-            border: 3px solid #64ffda;
-            background: linear-gradient(135deg, rgba(100, 255, 218, 0.15) 0%, rgba(102, 126, 234, 0.15) 100%);
-            position: relative;
-        }
-
-        .project-card.flagship::before {
-            content: '⭐ FLAGSHIP PROJECT';
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: linear-gradient(135deg, #64ffda 0%, #667eea 100%);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .project-card:hover {
-            transform: translateY(-15px);
-            border-color: #64ffda;
-            box-shadow: 0 25px 60px rgba(100, 255, 218, 0.4);
-        }
-
-        .project-card h3 {
-            color: #f093fb;
-            margin-bottom: 20px;
-            font-size: 1.9em;
-        }
-
-        .project-card p {
-            margin-bottom: 18px;
-            line-height: 1.7;
-        }
-
-        .tech-stack {
-            color: #667eea;
-            font-weight: bold;
-            margin: 25px 0;
-            padding: 15px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .project-highlights {
-            background: rgba(100, 255, 218, 0.05);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #64ffda;
-        }
-
-        .project-highlights h4 {
-            color: #64ffda;
-            margin-bottom: 15px;
-            font-size: 1.2em;
-        }
-
-        .project-highlights ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .project-highlights li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        .project-highlights li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #64ffda;
-            font-weight: bold;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.4s;
-            font-weight: bold;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-secondary {
-            background: linear-gradient(135deg, #64ffda 0%, #667eea 100%);
-        }
-
-        .experience-timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #64ffda, #667eea);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px;
-            padding: 30px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-            border-radius: 15px;
-            border: 2px solid rgba(100, 255, 218, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -45px;
-            top: 30px;
-            width: 15px;
-            height: 15px;
-            background: #64ffda;
-            border-radius: 50%;
-            border: 3px solid #0a0e27;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            border-color: #64ffda;
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.3);
-        }
-
-        .timeline-date {
-            color: #64ffda;
-            font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        .timeline-title {
-            color: #f093fb;
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .timeline-company {
-            color: #667eea;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-        }
-
-        .scroll-top {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.4s;
-            font-size: 1.8em;
-            z-index: 1000;
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-        }
-
-        .scroll-top:hover {
-            transform: translateY(-10px) scale(1.1);
-        }
-
-        footer {
-            background: rgba(10, 14, 39, 0.9);
-            padding: 40px 0 20px;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2.2em; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr;padding:120px 40px 80px;}
+  .hero-right{display:none;}
+  .about-grid{grid-template-columns:1fr;}
+  .skills-grid{grid-template-columns:1fr 1fr;}
+  .project-featured{grid-template-columns:1fr;}
+  .project-featured-left{border-right:none;border-bottom:1px solid rgba(184,150,90,.12);}
+  .projects-grid{grid-template-columns:1fr 1fr;}
+  .results-band{grid-template-columns:repeat(3,1fr);padding:48px 40px;}
+  .contact-grid{grid-template-columns:1fr;}
+  .exp-item{grid-template-columns:1fr;}
+  .exp-left{border-right:none;border-bottom:1px solid rgba(184,150,90,.1);}
+  section{padding:80px 40px;}
+  footer{flex-direction:column;gap:20px;text-align:center;padding:32px 40px;}
+}
+@media(max-width:768px){
+  .nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .hero{padding:100px 24px 60px;}
+  .hero-name{font-size:38px;}
+  section{padding:64px 24px;}
+  .skills-grid{grid-template-columns:1fr;}
+  .projects-grid{grid-template-columns:1fr;}
+  .results-band{grid-template-columns:1fr 1fr;padding:40px 24px;}
+  .project-featured-left,.project-featured-right{padding:36px 28px;}
+  footer{padding:28px 24px;}
+}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-brand">Efeosa <span>Adagbonyin</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-left">
+    <div class="hero-eyebrow">AI Operations Specialist · Lagos, Nigeria</div>
+    <h1 class="hero-name">
+      Adagbonyin<br>
+      <em>Efeosa Funmilayo</em>
+    </h1>
+    <p class="hero-role">Full-Stack Developer &amp; n8n Automation Engineer</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      I build the systems that run businesses <strong>daily content pipelines, AI voice agents, GoHighLevel architectures, and full-stack platforms</strong> — then make sure they stay running. 10 years across operations, automation, and development. Available for US-based remote roles worldwide.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="mailto:efeosaadagbonyin@gmail.com" class="btn-ghost">Get in Touch</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">n8n Advanced</span>
+      <span class="badge">GoHighLevel</span>
+      <span class="badge">Django · Next.js</span>
+      <span class="badge">AI Automation</span>
+      <span class="badge">Remote · Available Now</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="stats-panel">
+      <div class="stats-panel-header">
+        <div class="dot dot-g"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-r"></div>
+        <span class="stats-panel-label">Verified Results</span>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-cell highlight">
+          <span class="stat-number">10,<em>666</em></span>
+          <span class="stat-desc">LinkedIn impressions — single week<br>598% increase, zero paid ads</span>
         </div>
-    </nav>
-    
-    <div class="particles" id="particles"></div>
-
-    <header>
-        <div class="header-content">
-            <h1>Adagbonyin Efeosa Funmilayo</h1>
-            <p class="title">Full-Stack Web Developer | AI Automation Specialist | GoHighLevel Architect</p>
-            <p class="subtitle">Senior Virtual Assistant & Business Operations Expert</p>
-            <div style="margin: 25px 0;">
-                <span class="experience-badge">🚀 3 Years Web Dev & AI</span>
-                <span class="experience-badge">💼 7 Years Virtual Assistant</span>
-                <span class="experience-badge">🌍 10 Years Combined Experience</span>
-            </div>
-            <div class="contact-links">
-                <a href="mailto:efejasmine98@gmail.com">📧 Email</a>
-                <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">💼 LinkedIn</a>
-                <a href="tel:+22901926031721">📞 +2347025114901</a>
-            </div>
+        <div class="stat-cell">
+          <span class="stat-number">76</span>
+          <span class="stat-desc">Qualified leads across 8 industries in 2 weeks</span>
         </div>
-    </header>
-
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p>Full-Stack Developer and AI Automation Architect with 10 years of combined experience building complete business ecosystems. I specialize in transforming complex requirements into scalable, production-ready solutions that drive real business results.</p>
-                <p>With 3 years of intensive web development and AI integration experience, I excel at designing intuitive frontends with Next.js, engineering robust backends with Python and Django, and implementing intelligent automation systems. My 7 years as a Virtual Assistant and Operations Manager give me unique insight into the real-world business processes technology needs to serve.</p>
-                <p>I architect solutions that eliminate manual work, increase efficiency, and drive revenue—from AI-powered customer support systems to multi-location CRM workflows that actually work for businesses.</p>
-                <p>📍 Based in Bénin | 🌍 Available for remote opportunities worldwide</p>
-            </div>
-
-            <div id="skills" class="skills-grid">
-                <div class="skill-category">
-                    <h3>Development & AI</h3>
-                    <ul>
-                        <li>Frontend: Next.js, React, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS</li>
-                        <li>Backend: Python, Django REST Framework, Node.js</li>
-                        <li>AI & LLM: Google Gemini, Prompt Engineering, Celery, REST APIs</li>
-                        <li>Databases: PostgreSQL, Redis, Docker, Vercel</li>
-                        <li>E-commerce: Shopify (Store Setup, Theme Customization, App Integration)</li>
-                        <li>Design: Figma, Canva, Wireframing, Prototyping</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Automation & CRM</h3>
-                    <ul>
-                        <li>GoHighLevel: Advanced Workflows, Funnels, Sub-account Architecture</li>
-                        <li>Marketing Automation: Klaviyo, Zapier, n8n (Advanced)</li>
-                        <li>Workflow Automation & Optimization</li>
-                        <li>CRM & Database Administration</li>
-                        <li>Email Marketing & Drip Campaigns</li>
-                        <li>API Integrations & Webhooks</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Business Operations</h3>
-                    <ul>
-                        <li>Executive Administrative Support</li>
-                        <li>Advanced Inbox & Calendar Management</li>
-                        <li>Client Relationship Management</li>
-                        <li>Project & Task Coordination</li>
-                        <li>Google My Business Management</li>
-                        <li>SEO, Meta Ads, Google Analytics</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="stat-cell">
+          <span class="stat-number">40K+</span>
+          <span class="stat-desc">Impressions by Week 5<br>zero dead posts</span>
         </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Web Development & AI Projects</h2>
-            
-            <div class="projects-grid">
-                <!-- FLAGSHIP PROJECT -->
-                <div class="project-card flagship" style="grid-column: 1 / -1;">
-                    <h3>AfroDetty - Full-Stack Travel Booking Platform</h3>
-                    <p>Architected and deployed a production-ready travel booking platform from scratch in 90 days, featuring complete user authentication, booking management, payment processing, and an advanced admin dashboard. This comprehensive system handles packages, events, flights, accommodations, and add-ons with AI-powered customer support.</p>
-                    
-                    <div class="project-highlights">
-                        <h4>Technical Architecture:</h4>
-                        <ul>
-                            <li><strong>Backend API:</strong> Built complete Django REST Framework backend with JWT authentication, PostgreSQL database, and Redis caching for optimal performance</li>
-                            <li><strong>Frontend:</strong> Developing responsive Next.js interface with Tailwind CSS, featuring real-time booking updates and seamless user experience</li>
-                            <li><strong>Admin Dashboard:</strong> Comprehensive 91/100 completion score with booking management (6 pages), inventory CRUD operations, payment verification, analytics, and marketing tools</li>
-                            <li><strong>AI Integration:</strong> Built conversational WhatsApp agent using n8n and Google Gemini for 24/7 automated customer support and inquiry handling</li>
-                            <li><strong>Payment Systems:</strong> Integrated cryptocurrency payment verification and traditional payment gateway processing</li>
-                            <li><strong>Task Queue:</strong> Implemented Celery with Redis for asynchronous email notifications, booking confirmations, and background processing</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-highlights">
-                        <h4>Key Features Delivered:</h4>
-                        <ul>
-                            <li>Complete booking workflow for 5 product types (packages, events, flights, accommodations, add-ons)</li>
-                            <li>Advanced filtering, search, and data table components for admin operations</li>
-                            <li>Real-time analytics dashboard with booking stats, revenue tracking, and performance metrics</li>
-                            <li>Email marketing campaign management with Klaviyo integration</li>
-                            <li>Blog management system with post creation and content publishing</li>
-                            <li>Reusable component library (AdminCard, FilterBar, DataTable, StatusBadge)</li>
-                        </ul>
-                    </div>
-
-                    <p class="tech-stack"><strong>Tech Stack:</strong> Python | Django REST Framework | Next.js | PostgreSQL | Redis | Celery | n8n | Google Gemini AI | Tailwind CSS | JWT Authentication | Docker | Vercel</p>
-                    
-                    <div class="project-links">
-                        <a href="https://afrodetty.com" class="btn" target="_blank">View Live Platform</a>
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Documentation & Demos</a>
-                    </div>
-                </div>
-
-                <!-- Other Projects -->
-                <div class="project-card">
-                    <h3>Ebonic Embrace - Shopify E-commerce</h3>
-                    <p>Built and launched complete Shopify e-commerce platform for salon and barber products. Designed custom product pages, implemented payment gateway integration, optimized for mobile responsiveness, and configured inventory management systems.</p>
-                    <p>Managed ongoing site maintenance, product updates, SEO optimization, and customer experience enhancements to drive conversions.</p>
-                    <p class="tech-stack"><strong>Tech Stack:</strong> Shopify | Liquid | HTML/CSS | Payment Gateway Integration | SEO Optimization</p>
-                    <div class="project-links">
-                        <a href="https://ebonicembrace.com/collections/salon-barber/" class="btn" target="_blank">View Live Site</a>
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn btn-secondary" target="_blank">View Demos</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>N8N Gmail AI Automation</h3>
-                    <p>Designed and deployed AI-powered email support system that reduced manual inbox management by 75%. Engineered multi-step workflow connecting Gmail API and Google Gemini to automatically classify emails, archive junk, and trigger AI-driven responses.</p>
-                    <p>Developed intelligent agent that drafts context-aware professional replies for support tickets, cutting response time by 90%.</p>
-                    <p class="tech-stack"><strong>Tech Stack:</strong> n8n | Gmail API | Google Gemini | Workflow Automation | AI Integration</p>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>GoHighLevel Gym Management System</h3>
-                    <p>Architected complete MVP for multi-location gym franchise using GoHighLevel. Engineered sophisticated lead management with round-robin assignment, 1-minute auto-rerouting, and 5-minute lead-locking logic to maximize conversions.</p>
-                    <p>Built complex compliance rules for location-based calendars and automated appointment reminder workflows to reduce no-shows.</p>
-                    <p class="tech-stack"><strong>Tech Stack:</strong> GoHighLevel | API Integrations | Workflow Automation | Aircall</p>
-                    <div class="project-links">
-                        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="btn" target="_blank">View Demo</a>
-                    </div>
-                </div>
-            </div>
+        <div class="stat-cell highlight">
+          <span class="stat-number">75%</span>
+          <span class="stat-desc">Manual admin reduction via automation across all roles</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="experience">
-        <div class="container">
-            <h2>Virtual Assistant & Operations Experience</h2>
-            <div style="text-align: center; margin-bottom: 50px;">
-                <a href="https://drive.google.com/drive/folders/1hnxvX2TI2VBUt9dwJ_DltLZ3hlStOoyj" class="btn" target="_blank" style="font-size: 1.3em; padding: 18px 40px;">📁 View All VA Project Demos</a>
-            </div>
+<!-- RESULTS BAND -->
+<div class="results-band">
+  <div class="result-cell">
+    <span class="result-cell-num">10K+</span>
+    <span class="result-cell-label">LinkedIn Impressions<br>Week 2</span>
+  </div>
+  <div class="result-cell">
+    <span class="result-cell-num">76</span>
+    <span class="result-cell-label">Qualified Leads<br>2 Weeks</span>
+  </div>
+  <div class="result-cell">
+    <span class="result-cell-num">5K+</span>
+    <span class="result-cell-label">Okrika Bales<br>Sold</span>
+  </div>
+  <div class="result-cell">
+    <span class="result-cell-num">90%</span>
+    <span class="result-cell-label">Response Time<br>Reduction</span>
+  </div>
+  <div class="result-cell">
+    <span class="result-cell-num">12yr</span>
+    <span class="result-cell-label">In Business<br>Self-Made</span>
+  </div>
+</div>
 
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2024 - 2025</div>
-                    <div class="timeline-title">Virtual Assistant & Systems Support</div>
-                    <div class="timeline-company">Magic Hollow Moment</div>
-                    <p>Acted as the primary point of contact for all client communication and support, maintaining a 98% positive client satisfaction rate through proactive and professional service.</p>
-                    <p>Engineered a complete business support system that automated email handling and client follow-ups, reducing daily inbox management time by over 75%.</p>
-                    <p>Designed and deployed an AI-powered workflow to intelligently sort incoming emails and generate draft replies for common support queries, ensuring faster, more consistent communication.</p>
-                    <p>Streamlined the client payment process by building an automated workflow for invoicing and transaction tracking, improving cash flow and reducing administrative errors.</p>
-                </div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-eyebrow">About</div>
+  <div class="about-grid">
+    <div class="about-copy reveal">
+      <h2 class="section-title">Self-taught.<br>Systems-first.<br><em>Results-led.</em></h2>
+      <p>I am a 30-year-old AI Operations Specialist and Full-Stack Developer based in Lagos, Nigeria. I did not come up through a traditional tech pipeline. I learned every skill on the job while running a 12-year wholesale business and raising two children as a single mother.</p>
+      <p>That background shapes how I work. I do not build for show. I build systems that <strong>eliminate manual work, generate leads, and run without someone watching them</strong>. When something breaks I fix it. When something is missing I build it.</p>
+      <div class="lead-stat">"I built a daily content intelligence pipeline that scrapes 4 sources, generates content for 10 platforms, and emails a client a full ready-to-approve brief every morning at 8am automatically."</div>
+      <p>I currently operate as the primary backend operator for a US-based AI automation agency (R.G), managing content, pipeline, automation, and a 3-person team entirely remotely from Lagos. I also build my own client projects under <strong>Jasmine Advantage</strong>.</p>
+      <p>Available for: full-time remote roles, contract builds, and retainer operations work. Primarily US-based clients.</p>
+    </div>
+    <div class="method-grid reveal">
+      <div class="method-card">
+        <div class="method-num">Method 01</div>
+        <div class="method-title">Niche Foundation</div>
+        <div class="method-desc">Lock the niche, own the voice, build the content system that attracts the right buyers consistently.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-num">Method 02</div>
+        <div class="method-title">Broad Expansion</div>
+        <div class="method-desc">Once niche is proven, expand reach across platforms using the same core asset intelligently repurposed.</div>
+      </div>
+      <div class="method-card">
+        <div class="method-num">Method 03</div>
+        <div class="method-title">Automation Scale</div>
+        <div class="method-desc">Replace every repeatable action with a workflow. Humans approve. Systems execute. Revenue compounds.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2023 - 2024</div>
-                    <div class="timeline-title">Event Coordinator & Client Support Manager</div>
-                    <div class="timeline-company">IJGB Naija</div>
-                    <p>Provided comprehensive administrative support for multiple entrepreneurs, managing complex schedules, CRM updates, and high-volume inboxes to maximize client productivity.</p>
-                    <p>Developed a streamlined client onboarding process, creating branded guides and checklists that reduced new client setup time by 40%.</p>
-                    <p>Proofread and enhanced over 500+ documents, including emails and social media posts, ensuring brand consistency, clarity, and professionalism.</p>
-                </div>
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-eyebrow">Technical Skills</div>
+  <h2 class="section-title" style="color:var(--cream);">Built to build.<br><em>Wired to automate.</em></h2>
+  <p class="section-lead">Every skill listed here has been used in a live production environment for a paying client, a deployed system, or a business I run myself.</p>
+  <div class="skills-grid reveal">
+    <div class="skill-block">
+      <span class="skill-block-icon">⚙️</span>
+      <div class="skill-block-title">Automation & AI</div>
+      <ul class="skill-list">
+        <li>n8n — Advanced (self-hosted, multi-workflow)</li>
+        <li>OpenRouter · Google Gemini · OpenAI</li>
+        <li>ElevenLabs voice agent development</li>
+        <li>HeyGen video automation</li>
+        <li>Kie.ai image generation (async polling)</li>
+        <li>Zapier · Make.com</li>
+        <li>Webhook architecture · API integrations</li>
+        <li>Prompt engineering · LLM orchestration</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <span class="skill-block-icon">🛠️</span>
+      <div class="skill-block-title">Full-Stack Development</div>
+      <ul class="skill-list">
+        <li>Python · Django REST Framework</li>
+        <li>Next.js · React · JavaScript (ES6+)</li>
+        <li>Node.js · HTML5 · CSS3 · Tailwind</li>
+        <li>PostgreSQL · Redis · Docker · Vercel</li>
+        <li>JWT auth · Celery task queues</li>
+        <li>Shopify · Liquid · theme customisation</li>
+        <li>Figma · Canva · wireframing</li>
+        <li>GitHub Pages · deployment</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <span class="skill-block-icon">📊</span>
+      <div class="skill-block-title">CRM & Operations</div>
+      <ul class="skill-list">
+        <li>GoHighLevel — advanced workflows, funnels</li>
+        <li>Sub-account architecture · GHL rebuilds</li>
+        <li>HeyReach — LinkedIn outreach automation</li>
+        <li>Klaviyo · email drip campaigns</li>
+        <li>Google Sheets automation (34-col pipelines)</li>
+        <li>Airtable · Coda · Attio</li>
+        <li>Google My Business management</li>
+        <li>SEO · Meta Ads · Google Analytics</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <span class="skill-block-icon">📱</span>
+      <div class="skill-block-title">Social & Content</div>
+      <ul class="skill-list">
+        <li>LinkedIn strategy (10K+ impressions organic)</li>
+        <li>Multi-platform content system management</li>
+        <li>Daily content pipeline ops (10 platforms)</li>
+        <li>TikTok · Instagram · Facebook · Twitter/X</li>
+        <li>Alignable · Reddit · Google My Business</li>
+        <li>CapCut · HeyGen video production</li>
+        <li>Content team management &amp; SOP building</li>
+        <li>Cold email — 54 personalised campaigns</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <span class="skill-block-icon">💼</span>
+      <div class="skill-block-title">Business Operations</div>
+      <ul class="skill-list">
+        <li>Executive &amp; Senior VA (7 years)</li>
+        <li>Remote team management (3-person teams)</li>
+        <li>Client pipeline management &amp; onboarding</li>
+        <li>Proposal writing · milestone pricing</li>
+        <li>NDA · SOP · contract documentation</li>
+        <li>Upwork profile management</li>
+        <li>Calendar · inbox · CRM administration</li>
+        <li>12 years running own wholesale business</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <span class="skill-block-icon">🔌</span>
+      <div class="skill-block-title">APIs & Integrations</div>
+      <ul class="skill-list">
+        <li>YouTube Data API v3</li>
+        <li>Reddit via RapidAPI</li>
+        <li>Serper.dev · Perplexity AI</li>
+        <li>LinkedIn API · Facebook Graph API</li>
+        <li>Twitter OAuth · GMB API</li>
+        <li>Gmail OAuth · Google Sheets OAuth</li>
+        <li>Stripe payment integration</li>
+        <li>Cal.com · Twilio · Brevo</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">2017 - 2025 (8 Years)</div>
-                    <div class="timeline-title">Business Manager & Google My Business Specialist</div>
-                    <div class="timeline-company">UK Okrika Bale</div>
-                    <p>Built, launched, and managed complete Google My Business presence for an international retail business, driving local SEO visibility and customer engagement for 8 years.</p>
-                    <p>Provided elite, 24/7 customer support for international clients during high-stakes events, resolving issues immediately to ensure a seamless and positive experience.</p>
-                    <p>Managed all client-facing communication, including drafting professional itineraries, booking confirmations, and follow-up emails, leading to high rates of repeat business.</p>
-                    <p>Maintained meticulous records of all bookings, schedules, and client preferences, ensuring flawless execution of complex logistical arrangements.</p>
-                    <div class="project-links" style="margin-top: 25px;">
-                        <a href="https://maps.app.goo.gl/xWTE59Usdu78VGZK7" class="btn btn-secondary" target="_blank">View Google My Business Profile</a>
-                    </div>
-                </div>
-            </div>
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-eyebrow">Portfolio</div>
+  <h2 class="section-title">Work that<br><em>runs in production.</em></h2>
+  <p class="section-lead">Every project below is live, deployed, or delivered to a paying client. No mock-ups. No concepts.</p>
+
+  <div class="projects-layout">
+
+    <!-- FEATURED -->
+    <div class="project-featured reveal">
+      <div class="project-featured-badge">Flagship Project</div>
+      <div class="project-featured-left">
+        <div class="project-label">Full-Stack Platform · 90 Days to Live</div>
+        <h3 class="project-name">AfroDetty — Travel Booking Platform</h3>
+        <p class="project-desc">Architected and deployed a production-ready travel booking platform from scratch. Complete booking system for 5 product types — packages, events, flights, accommodations, add-ons — with an AI-powered WhatsApp support agent and a full admin dashboard scoring 91/100 completion.</p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Django REST</span>
+          <span class="stack-tag">Next.js</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Redis</span>
+          <span class="stack-tag">Celery</span>
+          <span class="stack-tag">n8n</span>
+          <span class="stack-tag">Google Gemini</span>
+          <span class="stack-tag">Tailwind</span>
+          <span class="stack-tag">JWT Auth</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">Klaviyo</span>
         </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>Let's Work Together</h2>
-            <div class="about-content" style="text-align: center;">
-                <p style="font-size: 1.2em; margin-bottom: 30px;">Ready to build something amazing? I'm available for full-time positions, contract work, and consulting engagements.</p>
-                <div class="contact-links">
-                    <a href="mailto:efejasmine98@gmail.com" class="btn">📧 efejasmine98@gmail.com</a>
-                    <a href="https://www.linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" class="btn btn-secondary" target="_blank">💼 LinkedIn Profile</a>
-                    <a href="tel:+2247025114901" class="btn">📞 +2347025114901</a>
-                </div>
-            </div>
+        <div class="project-links">
+          <a href="https://afrodetty.com" class="proj-btn proj-btn-solid" target="_blank">View Live</a>
+          <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="proj-btn proj-btn-outline" target="_blank">Documentation</a>
         </div>
-    </section>
+      </div>
+      <div class="project-featured-right">
+        <div class="project-results-title">What Was Built</div>
+        <ul class="project-feature-list">
+          <li>Django REST Framework backend with JWT auth, PostgreSQL + Redis caching</li>
+          <li>Next.js frontend with real-time booking updates and Tailwind UI</li>
+          <li>Admin dashboard — 6 booking pages, CRUD inventory, payment verification, analytics</li>
+          <li>AI WhatsApp agent via n8n + Google Gemini — 24/7 automated support</li>
+          <li>Cryptocurrency + traditional payment gateway integration</li>
+          <li>Celery async task queue — email notifications + booking confirmations</li>
+          <li>Klaviyo email marketing campaign management</li>
+          <li>Blog management system + reusable component library</li>
+        </ul>
+      </div>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Adagbonyin Efeosa Funmilayo. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.8;">Full-Stack Developer | AI Automation Specialist | Building scalable solutions that drive business growth 🚀</p>
+    <!-- 6 GRID CARDS -->
+    <div class="projects-grid reveal">
+
+      <div class="project-card">
+        <div class="card-badge">Client · R.g</div>
+        <div class="card-label">n8n · AI · 20-Layer Workflow</div>
+        <div class="card-name">Daily Content Intelligence Pipeline</div>
+        <p class="card-desc">Built a fully automated daily system from scratch — scrapes 4 sources (YouTube, Reddit, Twitter, Perplexity), merges intelligence, generates content for 10+ platforms, saves to a 34-column Google Sheets pipeline, and emails a formatted HTML daily brief with dual approval checkpoints every morning at 8am.</p>
+        <div class="card-stack">
+          <span class="card-tag">n8n</span>
+          <span class="card-tag">OpenRouter</span>
+          <span class="card-tag">YouTube API</span>
+          <span class="card-tag">RapidAPI</span>
+          <span class="card-tag">Serper.dev</span>
+          <span class="card-tag">Perplexity</span>
+          <span class="card-tag">Gmail OAuth</span>
+          <span class="card-tag">Google Sheets</span>
         </div>
-    </footer>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="card-link" target="_blank">View Demo →</a>
+      </div>
 
-    <div class="scroll-top" id="scrollTop">↑</div>
+      <div class="project-card">
+        <div class="card-badge">Client · R.M</div>
+        <div class="card-label">AI Voice · Booking · Payments</div>
+        <div class="card-name">AI Voice Agent "Anne"</div>
+        <p class="card-desc">Built and deployed an ElevenLabs inbound voice agent that answers calls, books appointments via cal.com, and collects deposits through Stripe with zero human involvement. Live and handling real calls.</p>
+        <div class="card-stack">
+          <span class="card-tag">ElevenLabs</span>
+          <span class="card-tag">n8n</span>
+          <span class="card-tag">Stripe</span>
+          <span class="card-tag">Cal.com</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="card-link" target="_blank">View Demo →</a>
+      </div>
 
-    <script>
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 25;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
+      <div class="project-card">
+        <div class="card-badge">Client · C / R.M</div>
+        <div class="card-label">GoHighLevel · CRM · Lead Management</div>
+        <div class="card-name">GHL Multi-Location Gym Rebuild</div>
+        <p class="card-desc">Rebuilt a broken GoHighLevel frame and architected a complete franchise CRM MVP. A round-robin lead assignment, 1-minute auto-rerouting, 5-minute lead-locking, location-based calendar compliance, and automated appointment reminders. Scope: $4,500 across 5 milestones.</p>
+        <div class="card-stack">
+          <span class="card-tag">GoHighLevel</span>
+          <span class="card-tag">Aircall</span>
+          <span class="card-tag">Zen Planner</span>
+          <span class="card-tag">Stripe</span>
+          <span class="card-tag">Engage</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="card-link" target="_blank">View Demo →</a>
+      </div>
 
-        function initScrollTop() {
-            const scrollTop = document.getElementById('scrollTop');
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    scrollTop.classList.add('visible');
-                } else {
-                    scrollTop.classList.remove('visible');
-                }
-            });
-            
-            scrollTop.addEventListener('click',() => {
-window.scrollTo({ top: 0, behavior: 'smooth' });
+      <div class="project-card">
+        <div class="card-label">Shopify · E-commerce · SEO</div>
+        <div class="card-name">Ebonic Embrace — Shopify Store</div>
+        <p class="card-desc">Built and launched a complete Shopify store for salon and barber products. Custom product pages, payment gateway integration, mobile-optimised, inventory management, and ongoing SEO and customer experience management.</p>
+        <div class="card-stack">
+          <span class="card-tag">Shopify</span>
+          <span class="card-tag">Liquid</span>
+          <span class="card-tag">HTML/CSS</span>
+          <span class="card-tag">SEO</span>
+        </div>
+        <a href="https://ebonicembrace.com/collections/salon-barber/" class="card-link" target="_blank">View Live →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="card-label">n8n · Gmail API · AI Automation</div>
+        <div class="card-name">n8n Gmail AI Automation</div>
+        <p class="card-desc">Designed and deployed an AI-powered email support system via multi-step n8n workflow connecting Gmail API and Google Gemini to classify emails, archive junk, and draft context-aware professional replies automatically. Result: 75% inbox reduction, 90% faster response time.</p>
+        <div class="card-stack">
+          <span class="card-tag">n8n</span>
+          <span class="card-tag">Gmail API</span>
+          <span class="card-tag">Google Gemini</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="card-link" target="_blank">View Demo →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="card-badge">Client · Rangeview Marketing</div>
+        <div class="card-label">Relevance AI · Compliance · EU AI Act</div>
+        <div class="card-name">Sentry48 — EU AI Act Compliance Tool</div>
+        <p class="card-desc">Built a multi-agent compliance tool on Relevance AI — 8 tools, custom system prompt, analysis pipeline and Report Builder. Designed to help businesses check EU AI Act compliance. 95% complete, one bug remaining on Context Packager.</p>
+        <div class="card-stack">
+          <span class="card-tag">Relevance AI</span>
+          <span class="card-tag">n8n</span>
+          <span class="card-tag">GitHub</span>
+          <span class="card-tag">readdy.ai</span>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" class="card-link" target="_blank">View Demo →</a>
+      </div>
+
+    </div><!-- /projects-grid -->
+
+  </div><!-- /projects-layout -->
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="section-eyebrow">Experience</div>
+  <h2 class="section-title" style="color:var(--cream);">10 years of<br><em>real work.</em></h2>
+  <p class="section-lead">Every role listed is where a real skill was earned not described. The Okrika business is 12 years of operations, not a side project.</p>
+
+  <div class="exp-list reveal">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2025 — Present</div>
+        <div class="exp-company">R Marketing<br>(Jasmine Advantage)</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">AI Operations Specialist & Primary Backend Operator</div>
+        <div class="exp-desc">
+          <p>Sole operator managing all content, pipeline, automation, and a 3-person subcontractor team for a US-based AI automation agency entirely invisibly, from Lagos.</p>
+          <p>Built the entire n8n daily content intelligence pipeline from scratch: 4-source scraping, 10+ platform content generation, Google Sheets pipeline (7 tabs, 34 columns), dual-approval email system, image generation (Kie.ai), video generation (HeyGen), auto-posting layer (5 platforms).</p>
+          <p>Deployed AI voice agent (ElevenLabs) answering inbound calls, booking appointments, collecting deposits via Stripe. Rebuilt broken GoHighLevel frame for gym franchise client.</p>
+        </div>
+        <div class="exp-results">
+          <span class="exp-result-tag">10,666 impressions in week 2</span>
+          <span class="exp-result-tag">76 leads in 2 weeks</span>
+          <span class="exp-result-tag">0 dead posts</span>
+          <span class="exp-result-tag">5,485 impressions on a single post</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2024 — 2025</div>
+        <div class="exp-company">Magic Hollow Moment</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Virtual Assistant & Systems Support</div>
+        <div class="exp-desc">
+          <p>Primary point of contact for all client communication: delivering 98% positive satisfaction rate. Engineered complete business support system: automated email handling, AI-powered workflow (n8n + Gemini) for inbox sorting + draft replies, automated invoicing + transaction tracking.</p>
+        </div>
+        <div class="exp-results">
+          <span class="exp-result-tag">75% inbox reduction</span>
+          <span class="exp-result-tag">98% client satisfaction</span>
+          <span class="exp-result-tag">40% faster onboarding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2023 — 2024</div>
+        <div class="exp-company">IJGB Naija</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Event Coordinator & Client Support Manager</div>
+        <div class="exp-desc">
+          <p>Administrative support for multiple entrepreneurs — complex schedules, CRM, high-volume inboxes. Built streamlined client onboarding process: branded guides and checklists reducing setup time by 40%. Reviewed and enhanced 500+ documents for brand consistency.</p>
+        </div>
+        <div class="exp-results">
+          <span class="exp-result-tag">500+ documents</span>
+          <span class="exp-result-tag">40% faster onboarding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2013 — Present<br>(12 years)</div>
+        <div class="exp-company">Jasmine Apparels &amp; Blings<br>(Okrika Business)</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-title">Founder & Business Manager</div>
+        <div class="exp-desc">
+          <p>Founded and have run a wholesale Okrika (first-grade thrift bale) business for 12 years, Shuffling Lagos &amp; Cotonou, delivering nationwide and worldwide. 5,000+ bales sold with a money-back guarantee. Built and managed the entire Google My Business presence, all customer communications, logistics, and international client relationships.</p>
+          <p>Also runs YouTube channel (@buythrift_Okrika_Bale) as a free tutorial resource for new Okrika business starters — Wednesday and Friday uploads, live Q&amp;A sessions.</p>
+        </div>
+        <div class="exp-results">
+          <span class="exp-result-tag">5,000+ bales sold</span>
+          <span class="exp-result-tag">12 years running</span>
+          <span class="exp-result-tag">Lagos · Cotonou · Worldwide</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-eyebrow">Contact</div>
+  <div class="contact-grid">
+    <div class="contact-copy reveal">
+      <h2 class="section-title">Let's build<br><em>something real.</em></h2>
+      <p>I am available for full-time remote roles, contract builds, and retainer operations work.  Primarily serving US-based clients from Lagos, Nigeria (WAT, GMT+1).</p>
+      <p>Best fits: AI Operations Manager · n8n Automation Specialist · Website Development · Executive VA · Social Media Manager (AI/tech brands) · GoHighLevel VA · CRM Integration · Remote Operations Manager.</p>
+      <p>I respond on WhatsApp and email. Direct message, no pleasantries. Get to the point in your first message and I will match that energy.</p>
+      <div class="contact-details">
+        <a href="mailto:efeosaadagbonyin@gmail.com" class="contact-row">
+          <span class="contact-row-label">Email</span>
+          <span class="contact-row-value">efeosaadagbonyin@gmail.com</span>
+        </a>
+        <a href="tel:+2347025114901" class="contact-row">
+          <span class="contact-row-label">WhatsApp</span>
+          <span class="contact-row-value">+234 702 511 4901</span>
+        </a>
+        <a href="https://linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank" class="contact-row">
+          <span class="contact-row-label">LinkedIn</span>
+          <span class="contact-row-value">Efeosa Funmilayo Adagbonyin</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" target="_blank" class="contact-row">
+          <span class="contact-row-label">Demos</span>
+          <span class="contact-row-value">Google Drive to All Project Demos</span>
+        </a>
+      </div>
+    </div>
+    <div class="availability-box reveal">
+      <div class="availability-title">Currently Available</div>
+      <div class="availability-status">
+        <div class="status-dot"></div>
+        <span class="status-text">Open to new opportunities: Lagos, Nigeria · WAT (GMT+1)</span>
+      </div>
+      <ul class="availability-list">
+        <li>Full-time remote positions</li>
+        <li>Contract builds (automation, development)</li>
+        <li>Monthly retainer operations work</li>
+        <li>US, UK, Canada, Australia-based clients</li>
+        <li>AI and tech brand social media management</li>
+        <li>n8n workflow builds - $500–$5,000/project</li>
+        <li>GoHighLevel architecture and rebuilds</li>
+        <li>Frontend and Backend website development - depends on scope</li>
+        <li>Executive VA - $25–$50/hour</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Adagbonyin Efeosa Funmilayo · Jasmine Advantage</div>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/efeosa-funmilayo-adagbonyin-06943419a" target="_blank">LinkedIn</a>
+    <a href="mailto:efeosaadagbonyin@gmail.com">Email</a>
+    <a href="https://drive.google.com/drive/folders/1JncSvKGZhnpFFw6St2VROgV-58RY8ZgE" target="_blank">Demos</a>
+  </div>
+  <div class="footer-copy">Lagos, Nigeria · Available Worldwide · © 2026</div>
+</footer>
+
+<script>
+// Nav scroll shadow
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
 });
-}
-    function initSmoothScrolling() {
-        const navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    const offsetTop = targetElement.offsetTop - 80;
-                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                }
-            });
-        });
-    }
 
-    document.addEventListener('DOMContentLoaded', () => {
-        createParticles();
-        initScrollTop();
-        initSmoothScrolling();
-    });
+// Reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
